@@ -147,7 +147,6 @@ class Ui_Dialog(QtGui.QWidget):
        # print("Row %d and Column %d was clicked" % (row, column))
 
 
-
 app = QtGui.QApplication(sys.argv)
 ex = Ui_Dialog()
 ex.show()

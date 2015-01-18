@@ -1,9 +1,4 @@
-__author__ = 'Muhammed5'
-import os
-from PyQt4 import QtCore, QtGui
-import sys
-
-class Model():
+class Model:
     def neustart(self):
         for j in range(15):
             for i in range(15):

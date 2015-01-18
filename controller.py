@@ -1,18 +1,21 @@
 from model import Model
 from nonogram_ui import Ui_Dialog
 from view import View
-
-__author__ = 'Muhammed5'
-import os
 from PyQt4 import QtCore, QtGui
 import sys
-
-class Controller:
-    def __init__(self, app):
+__author__ = 'mwech'
+class Controller():
+    def __init__(self):
         self.model = Model()
-        self.view = View(None)
+        self.view = View()
 
+    def main(self):
+        QtGui.QWidget.__init__(self)
+        self.view.setupUi(self)
         app = QtGui.QApplication(sys.argv)
         ex = Ui_Dialog()
         ex.show()
         sys.exit(app.exec_())
+
+c = Controller()
+c.main()

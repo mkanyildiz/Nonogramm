@@ -1,39 +1,17 @@
-# -*- coding: utf-8 -*-
+from model import Model
 
-# Form implementation generated from reading ui file 'ui_nonogramm.ui'
-#
-# Created: Sun Jan 18 13:45:29 2015
-#      by: PyQt4 UI code generator 4.11.3
-#
-# WARNING! All changes made in this file will be lost!
-
+__author__ = 'mwech'
 from PyQt4 import QtCore, QtGui
 import os
 import sys
-from nonogram_ui import _fromUtf8, _translate
-
 
 class View(QtGui.QWidget):
-
-    def __init__(self):
+    def setupUi(self, Dialog):
         try:
             _fromUtf8 = QtCore.QString.fromUtf8
         except AttributeError:
             def _fromUtf8(s):
                 return s
-
-        try:
-            _encoding = QtGui.QApplication.UnicodeUTF8
-            def _translate(context, text, disambig):
-                return QtGui.QApplication.translate(context, text, disambig, _encoding)
-        except AttributeError:
-            def _translate(context, text, disambig):
-                return QtGui.QApplication.translate(context, text, disambig)
-        print("Hi")
-        QtGui.QWidget.__init__(self)
-        self.setupUi(self)
-
-    def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(925, 828)
         Dialog.setAutoFillBackground(False)
@@ -119,6 +97,13 @@ class View(QtGui.QWidget):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
+        try:
+            _encoding = QtGui.QApplication.UnicodeUTF8
+            def _translate(context, text, disambig):
+                return QtGui.QApplication.translate(context, text, disambig, _encoding)
+        except AttributeError:
+            def _translate(context, text, disambig):
+                return QtGui.QApplication.translate(context, text, disambig)
         Dialog.setWindowTitle(_translate("Dialog", "NONOGRAMM", None))
         __sortingEnabled = self.tableWidget_2.isSortingEnabled()
         self.tableWidget_2.setSortingEnabled(False)
@@ -128,5 +113,9 @@ class View(QtGui.QWidget):
         self.pushButton.setText(_translate("Dialog", "Lösung", None))
         self.pushButton_2.setText(_translate("Dialog", "Neustart", None))
         self.comboBox.setItemText(0, _translate("Dialog", "Easy", None))
-        self.comboBox.setItemText(1, _translate("Dialog", "Meadium", None))
+        self.comboBox.setItemText(1, _translate("Dialog", "Medium", None))
         self.comboBox.setItemText(2, _translate("Dialog", "Hard", None))
+        self.a = Model()
+
+        self.pushButton_2.clicked.connect(self.a.neustart())
+        self.tableWidget_2.cellClicked.connect(self.a.cell_was_clicked())
