@@ -1,11 +1,12 @@
-from model import Model
+from src.model import MyModel
 
 __author__ = 'mwech'
-from PyQt4 import QtCore, QtGui
-import os
-import sys
 
-class View(QtGui.QWidget):
+from PyQt4 import QtCore, QtGui
+
+
+
+class MyView():
     def setupUi(self, Dialog):
         try:
             _fromUtf8 = QtCore.QString.fromUtf8
@@ -115,7 +116,7 @@ class View(QtGui.QWidget):
         self.comboBox.setItemText(0, _translate("Dialog", "Easy", None))
         self.comboBox.setItemText(1, _translate("Dialog", "Medium", None))
         self.comboBox.setItemText(2, _translate("Dialog", "Hard", None))
-        self.a = Model()
+        self.a = MyModel()
 
         self.pushButton_2.clicked.connect(self.a.neustart())
         self.tableWidget_2.cellClicked.connect(self.a.cell_was_clicked())
