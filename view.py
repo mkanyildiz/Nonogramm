@@ -2,13 +2,12 @@
 
 # Form implementation generated from reading ui file 'ui_nonogramm.ui'
 #
-# Created: Sat Jan 17 12:32:30 2015
+# Created: Sun Jan 18 13:45:29 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-import sys
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -24,21 +23,17 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Dialog(QtGui.QWidget):
-
-    def __init__(self):
-        print("Hi")
-        QtGui.QWidget.__init__(self)
-        self.setupUi(self)
-
+class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(925, 828)
         Dialog.setAutoFillBackground(False)
-        Dialog.setStyleSheet(_fromUtf8("background-color:#566C87\n"""))
+        Dialog.setStyleSheet(_fromUtf8("background-color:#566C87\n"
+""))
         self.tableWidget_2 = QtGui.QTableWidget(Dialog)
         self.tableWidget_2.setGeometry(QtCore.QRect(90, 280, 451, 451))
-        self.tableWidget_2.setStyleSheet(_fromUtf8("background-color:white;\n""border-width:10px;"))
+        self.tableWidget_2.setStyleSheet(_fromUtf8("background-color:white;\n"
+"border-width:10px;"))
         self.tableWidget_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tableWidget_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tableWidget_2.setAutoScroll(True)
@@ -53,7 +48,6 @@ class Ui_Dialog(QtGui.QWidget):
         self.tableWidget_2.horizontalHeader().setVisible(False)
         self.tableWidget_2.horizontalHeader().setDefaultSectionSize(30)
         self.tableWidget_2.verticalHeader().setVisible(False)
-        self.tableWidget_2
         self.tableWidget_3 = QtGui.QTableWidget(Dialog)
         self.tableWidget_3.setGeometry(QtCore.QRect(550, 280, 241, 451))
         self.tableWidget_3.setStyleSheet(_fromUtf8("background-color:lightgrey;"))
@@ -68,7 +62,9 @@ class Ui_Dialog(QtGui.QWidget):
         self.tableWidget_3.verticalHeader().setVisible(False)
         self.tableWidget_4 = QtGui.QTableWidget(Dialog)
         self.tableWidget_4.setGeometry(QtCore.QRect(90, 30, 451, 241))
-        self.tableWidget_4.setStyleSheet(_fromUtf8("background-color:lightgrey;\n""border: 10px;\n"""))
+        self.tableWidget_4.setStyleSheet(_fromUtf8("background-color:lightgrey;\n"
+"border: 10px;\n"
+""))
         self.tableWidget_4.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tableWidget_4.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tableWidget_4.setAutoScroll(True)
@@ -80,7 +76,8 @@ class Ui_Dialog(QtGui.QWidget):
         self.tableWidget_4.verticalHeader().setVisible(False)
         self.lineEdit = QtGui.QLineEdit(Dialog)
         self.lineEdit.setGeometry(QtCore.QRect(190, 770, 131, 31))
-        self.lineEdit.setStyleSheet(_fromUtf8("background-color:white;\n""border-radius:10px;"))
+        self.lineEdit.setStyleSheet(_fromUtf8("background-color:white;\n"
+"border-radius:10px;"))
         self.lineEdit.setObjectName(_fromUtf8("lineEdit"))
         self.label = QtGui.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(30, 769, 111, 31))
@@ -88,15 +85,19 @@ class Ui_Dialog(QtGui.QWidget):
         self.label.setObjectName(_fromUtf8("label"))
         self.pushButton = QtGui.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(360, 770, 91, 31))
-        self.pushButton.setStyleSheet(_fromUtf8("background-color:#4099ff;\n""border-radius:10px;\n"""))
+        self.pushButton.setStyleSheet(_fromUtf8("background-color:#4099ff;\n"
+"border-radius:10px;\n"
+""))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.pushButton_2 = QtGui.QPushButton(Dialog)
         self.pushButton_2.setGeometry(QtCore.QRect(670, 770, 81, 31))
-        self.pushButton_2.setStyleSheet(_fromUtf8("background-color:#334E6e;\n""border-radius:10px;"))
+        self.pushButton_2.setStyleSheet(_fromUtf8("background-color:#334E6e;\n"
+"border-radius:10px;"))
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.comboBox = QtGui.QComboBox(Dialog)
         self.comboBox.setGeometry(QtCore.QRect(510, 770, 101, 31))
-        self.comboBox.setStyleSheet(_fromUtf8("background-color:white\n"""))
+        self.comboBox.setStyleSheet(_fromUtf8("background-color:white\n"
+""))
         self.comboBox.setObjectName(_fromUtf8("comboBox"))
         self.comboBox.addItem(_fromUtf8(""))
         self.comboBox.addItem(_fromUtf8(""))
@@ -118,20 +119,3 @@ class Ui_Dialog(QtGui.QWidget):
         self.comboBox.setItemText(1, _translate("Dialog", "Meadium", None))
         self.comboBox.setItemText(2, _translate("Dialog", "Hard", None))
 
-        self.pushButton_2.clicked.connect(self.printTest)
-        self.tableWidget_2.cellClicked.connect(self.cell_was_clicked)
-
-    def printTest(self):
-        print("Test Print")
-
-    def cell_was_clicked(self, row, column):
-        print("Row %d and Column %d was clicked" % (row, column))
-        item = self.tableWidget_2.itemAt(0,2)
-        self.ID = item.text()
-        print(self.ID)
-
-
-app = QtGui.QApplication(sys.argv)
-ex = Ui_Dialog()
-ex.show()
-sys.exit(app.exec_())
