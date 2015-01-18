@@ -8,22 +8,31 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+import os
+import sys
+from nonogram_ui import _fromUtf8, _translate
 
-try:
-    _fromUtf8 = QtCore.QString.fromUtf8
-except AttributeError:
-    def _fromUtf8(s):
-        return s
 
-try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
-except AttributeError:
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+class View(QtGui.QWidget):
 
-class Ui_Dialog(object):
+    def __init__(self):
+        try:
+            _fromUtf8 = QtCore.QString.fromUtf8
+        except AttributeError:
+            def _fromUtf8(s):
+                return s
+
+        try:
+            _encoding = QtGui.QApplication.UnicodeUTF8
+            def _translate(context, text, disambig):
+                return QtGui.QApplication.translate(context, text, disambig, _encoding)
+        except AttributeError:
+            def _translate(context, text, disambig):
+                return QtGui.QApplication.translate(context, text, disambig)
+        print("Hi")
+        QtGui.QWidget.__init__(self)
+        self.setupUi(self)
+
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(925, 828)
@@ -34,9 +43,11 @@ class Ui_Dialog(object):
         self.tableWidget_2.setGeometry(QtCore.QRect(90, 280, 451, 451))
         self.tableWidget_2.setStyleSheet(_fromUtf8("background-color:white;\n"
 "border-width:10px;"))
+        self.tableWidget_2.setInputMethodHints(QtCore.Qt.ImhNone)
         self.tableWidget_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tableWidget_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tableWidget_2.setAutoScroll(True)
+        self.tableWidget_2.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
         self.tableWidget_2.setRowCount(15)
         self.tableWidget_2.setColumnCount(15)
         self.tableWidget_2.setObjectName(_fromUtf8("tableWidget_2"))
@@ -48,6 +59,7 @@ class Ui_Dialog(object):
         self.tableWidget_2.horizontalHeader().setVisible(False)
         self.tableWidget_2.horizontalHeader().setDefaultSectionSize(30)
         self.tableWidget_2.verticalHeader().setVisible(False)
+        self.tableWidget_2.NoEditTriggers
         self.tableWidget_3 = QtGui.QTableWidget(Dialog)
         self.tableWidget_3.setGeometry(QtCore.QRect(550, 280, 241, 451))
         self.tableWidget_3.setStyleSheet(_fromUtf8("background-color:lightgrey;"))
@@ -118,4 +130,3 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(0, _translate("Dialog", "Easy", None))
         self.comboBox.setItemText(1, _translate("Dialog", "Meadium", None))
         self.comboBox.setItemText(2, _translate("Dialog", "Hard", None))
-
