@@ -5,7 +5,11 @@ from PyQt4 import QtCore, QtGui
 
 
 
-class MyView():
+class MyView(QtGui.QWidget):
+    def __init__(self):
+        QtGui.QWidget.__init__(self)
+        self.setupUi(self)
+
     def setupUi(self, Dialog):
         try:
             _fromUtf8 = QtCore.QString.fromUtf8

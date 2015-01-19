@@ -5,15 +5,14 @@ __author__ = 'mwech'
 import sys
 from PyQt4 import QtGui
 
-class MyController(QtGui.QWidget):
+class MyController():
     def __init__(self):
         self.view = MyView()
         self.model = MyModel()
 
     def main(self):
-        QtGui.QWidget.__init__(self)
-        self.view.setupUi(self)
-        self.model.methode()
+        print("Hallo")
+        self.view.show()
 
 
 app = QtGui.QApplication(sys.argv)
