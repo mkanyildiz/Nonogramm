@@ -6,10 +6,11 @@ from PyQt4 import QtCore, QtGui
 
 
 class MyView(QtGui.QWidget):
+    liste = []
     def __init__(self):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
-
+        MyView.liste = []
     def setupUi(self, Dialog):
         try:
             _fromUtf8 = QtCore.QString.fromUtf8
@@ -178,9 +179,17 @@ class MyView(QtGui.QWidget):
                 self.tableWidget_2.item(j,i).setBackground(QtGui.QColor('white'))
 
     def cell_was_clicked(self, row, column):
+        #self.liste.append([0,0], )
         list = [row, column]
-        self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
-        item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
+        if list in self.liste:
+            self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
+            item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('white'))
+            a = self.liste.index(list)
+            del self.liste[a]
+        else:
+            self.liste.append([row, column])
+            self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
+            item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
 
     def loesung(self):
         self.neustart()
