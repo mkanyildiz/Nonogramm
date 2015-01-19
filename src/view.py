@@ -1,4 +1,3 @@
-from src.model import MyModel
 
 __author__ = 'mwech'
 
@@ -116,7 +115,18 @@ class MyView():
         self.comboBox.setItemText(0, _translate("Dialog", "Easy", None))
         self.comboBox.setItemText(1, _translate("Dialog", "Medium", None))
         self.comboBox.setItemText(2, _translate("Dialog", "Hard", None))
-        self.a = MyModel()
 
-        self.pushButton_2.clicked.connect(self.a.neustart())
-        self.tableWidget_2.cellClicked.connect(self.a.cell_was_clicked())
+        self.pushButton_2.clicked.connect(self.neustart)
+        self.tableWidget_2.cellClicked.connect(self.cell_was_clicked)
+
+    def neustart(self):
+        for j in range(15):
+            for i in range(15):
+                list = [j, i]
+                self.tableWidget_2.setItem(j,i,QtGui.QTableWidgetItem())
+                self.tableWidget_2.item(j,i).setBackground(QtGui.QColor('white'))
+
+    def cell_was_clicked(self, row, column):
+        list = [row, column]
+        self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
+        item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
