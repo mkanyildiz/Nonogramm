@@ -15,7 +15,3 @@ class MyController():
         self.view.show()
 
 
-app = QtGui.QApplication(sys.argv)
-c = MyController()
-c.main()
-sys.exit(app.exec_())
