@@ -120,8 +120,55 @@ class MyView(QtGui.QWidget):
         self.comboBox.setItemText(1, _translate("Dialog", "Medium", None))
         self.comboBox.setItemText(2, _translate("Dialog", "Hard", None))
 
+
+        # filling table left
+        list_bes = [[2,0,0,0,0,0,0,0],
+                     [2,3,0,0,0,0,0,0],
+                     [1,2,4,0,0,0,0,0],
+                     [9,0,0,0,0,0,0,0],
+                     [6,0,0,0,0,0,0,0],
+                     [6,0,0,0,0,0,0,0],
+                     [6,0,0,0,0,0,0,0],
+                     [1,1,3,0,0,0,0,0],
+                     [2,0,0,0,0,0,0,0],
+                     [2,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0]]
+        for j in range(15):
+            for i in range(8):
+                list = [j, i]
+                self.led = QtGui.QLineEdit(str(list_bes[j][i]))
+                self.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
+                self.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+             #   self.tableWidget_3.item(j,i).setText("xy")
+
+        # filling table up
+        list_bes2 = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,1,5,0,0,0,7,4,3,0,0,0,0,0],
+                    [1,2,2,1,5,5,5,1,2,3,0,0,0,0,0]]
+        for j in range(8):
+            for i in range(15):
+                list = [j, i]
+                self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
+                self.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
+                self.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+             #   self.tableWidget_3.item(j,i).setText("xy")
+
         self.pushButton_2.clicked.connect(self.neustart)
         self.tableWidget_2.cellClicked.connect(self.cell_was_clicked)
+
+        """50 felder"""
+        self.pushButton.clicked.connect(self.loesung)
+       # for y in range(50):
+
 
     def neustart(self):
         for j in range(15):
@@ -134,3 +181,18 @@ class MyView(QtGui.QWidget):
         list = [row, column]
         self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
         item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
+
+    def loesung(self):
+        self.neustart()
+        list = [[0,8],[0,9],
+                        [1,2],[1,3],[1,7],[1,8],[1,9],
+                        [2,1],[2,3],[2,4],[2,6],[2,7],[2,8],[2,9],
+                        [3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],
+                        [4,2],[4,3],[4,4],[4,5],[4,6],[4,7],
+                        [5,3],[5,4],[5,5],[5,6],[5,7],[5,8],
+                        [6,4],[6,5],[6,6],[6,7],[6,8],[6,9],
+                        [7,3],[7,5],[7,7],[7,8],[7,9],
+                        [8,8],[8,9],
+                        [9,7],[9,8]]
+        for z in range(len(list)):
+            self.cell_was_clicked(list[z][0], list[z][1])
