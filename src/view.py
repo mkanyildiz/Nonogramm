@@ -1,16 +1,18 @@
+from PyQt4.examples.dialogs.standarddialogs import Dialog
 
 __author__ = 'mwech'
 
 from PyQt4 import QtCore, QtGui
 
 
-
 class MyView(QtGui.QWidget):
     liste = []
+
     def __init__(self):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
         MyView.liste = []
+
     def setupUi(self, Dialog):
         try:
             _fromUtf8 = QtCore.QString.fromUtf8
@@ -55,6 +57,7 @@ class MyView(QtGui.QWidget):
         self.tableWidget_3.horizontalHeader().setVisible(False)
         self.tableWidget_3.horizontalHeader().setDefaultSectionSize(30)
         self.tableWidget_3.verticalHeader().setVisible(False)
+        self.tableWidget_3.NoEditTriggers
         self.tableWidget_4 = QtGui.QTableWidget(Dialog)
         self.tableWidget_4.setGeometry(QtCore.QRect(90, 30, 451, 241))
         self.tableWidget_4.setStyleSheet(_fromUtf8("background-color:lightgrey;\n"
@@ -69,6 +72,7 @@ class MyView(QtGui.QWidget):
         self.tableWidget_4.horizontalHeader().setVisible(False)
         self.tableWidget_4.horizontalHeader().setDefaultSectionSize(30)
         self.tableWidget_4.verticalHeader().setVisible(False)
+        self.tableWidget_4.NoEditTriggers
         self.lineEdit = QtGui.QLineEdit(Dialog)
         self.lineEdit.setGeometry(QtCore.QRect(190, 770, 131, 31))
         self.lineEdit.setStyleSheet(_fromUtf8("background-color:white;\n"
@@ -121,7 +125,6 @@ class MyView(QtGui.QWidget):
         self.comboBox.setItemText(1, _translate("Dialog", "Medium", None))
         self.comboBox.setItemText(2, _translate("Dialog", "Hard", None))
 
-
         # filling table left
         list_bes = [[2,0,0,0,0,0,0,0],
                      [2,3,0,0,0,0,0,0],
@@ -163,45 +166,8 @@ class MyView(QtGui.QWidget):
                 self.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
              #   self.tableWidget_3.item(j,i).setText("xy")
 
-        self.pushButton_2.clicked.connect(self.neustart)
-        self.tableWidget_2.cellClicked.connect(self.cell_was_clicked)
 
-        """50 felder"""
-        self.pushButton.clicked.connect(self.loesung)
        # for y in range(50):
 
 
-    def neustart(self):
-        for j in range(15):
-            for i in range(15):
-                list = [j, i]
-                self.tableWidget_2.setItem(j,i,QtGui.QTableWidgetItem())
-                self.tableWidget_2.item(j,i).setBackground(QtGui.QColor('white'))
 
-    def cell_was_clicked(self, row, column):
-        #self.liste.append([0,0], )
-        list = [row, column]
-        if list in self.liste:
-            self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
-            item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('white'))
-            a = self.liste.index(list)
-            del self.liste[a]
-        else:
-            self.liste.append([row, column])
-            self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
-            item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
-
-    def loesung(self):
-        self.neustart()
-        list = [[0,8],[0,9],
-                        [1,2],[1,3],[1,7],[1,8],[1,9],
-                        [2,1],[2,3],[2,4],[2,6],[2,7],[2,8],[2,9],
-                        [3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],
-                        [4,2],[4,3],[4,4],[4,5],[4,6],[4,7],
-                        [5,3],[5,4],[5,5],[5,6],[5,7],[5,8],
-                        [6,4],[6,5],[6,6],[6,7],[6,8],[6,9],
-                        [7,3],[7,5],[7,7],[7,8],[7,9],
-                        [8,8],[8,9],
-                        [9,7],[9,8]]
-        for z in range(len(list)):
-            self.cell_was_clicked(list[z][0], list[z][1])

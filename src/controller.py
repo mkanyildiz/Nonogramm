@@ -11,7 +11,10 @@ class MyController():
         self.model = MyModel()
 
     def main(self):
-        print("Hallo")
         self.view.show()
+        self.view.pushButton_2.clicked.connect(self.model.neustart)
+        self.view.tableWidget_2.cellClicked.connect(self.model.cell_was_clicked)
+        self.view.pushButton.clicked.connect(self.model.loesung)
+
 
 
