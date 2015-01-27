@@ -1,15 +1,17 @@
 __author__ = 'mwech'
-from PyQt4 import QtCore, QtGui
 from src.view import MyView
+from PyQt4 import QtGui
+
 class MyModel():
     def __init__(self):
         self.view = MyView()
+        self.view.show()
     def neustart(self):
         for j in range(15):
             for i in range(15):
                 list = [j, i]
                 self.view.tableWidget_2.setItem(j,i,QtGui.QTableWidgetItem())
-                self.view.tableWidget_2.item(j,i).setBackground(QtGui.QColor('white'))
+                self.view.tableWidget_2.item(j,i).setBackground(QtGui.QColor('black'))
 
     def cell_was_clicked(self, row, column):
         list = [row, column]
