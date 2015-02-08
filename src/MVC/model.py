@@ -1,7 +1,7 @@
 __author__ = 'mwech'
 from PyQt4 import QtGui
 
-from src.VC.view import MyView
+from src.MVC.view import MyView
 
 
 class MyModel():

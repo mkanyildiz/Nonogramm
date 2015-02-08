@@ -2,7 +2,7 @@ import sys
 
 from PyQt4 import QtGui
 
-from src.VC.controller import MyController
+from src.MVC.controller import MyController
 
 __author__ = 'Muhammed5'
 

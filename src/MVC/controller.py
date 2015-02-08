@@ -1,5 +1,5 @@
-from src.VC.view import MyView
-from src.model import MyModel
+from src.MVC.view import MyView
+from src.MVC.model import MyModel
 
 __author__ = 'mwech'
 
