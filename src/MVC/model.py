@@ -1,11 +1,12 @@
 __author__ = 'mwech'
-from src.view import MyView
 from PyQt4 import QtGui
+
+from src.VC.view import MyView
+
 
 class MyModel():
     def __init__(self):
         self.view = MyView()
-        self.view.show()
     def neustart(self):
         for j in range(15):
             for i in range(15):
