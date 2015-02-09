@@ -16,11 +16,11 @@ class MyController(MyModel):
     model = None
     view = None
 
-    def __init__(self, MyModel):
+    def __init__(self, m):
         """
         Konstruktor
         """
-        self.model = MyModel()
+        self.model = m
         self.view = MyView(self.model, self)
         self.model.setView(self.view)
 
@@ -31,8 +31,8 @@ class MyController(MyModel):
 
         """
         self.view.show()
-        self.view.fill_tab()
-        self.view.neustart()
+        self.model.fill_tab()
+        self.model.neustart()
         self.view.pushButton_2.clicked.connect(self.model.neustart)
         self.view.tableWidget_2.cellClicked.connect(self.model.cell_was_clicked)
         self.view.pushButton.clicked.connect(self.model.loesung)

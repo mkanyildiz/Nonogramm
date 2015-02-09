@@ -1,5 +1,6 @@
 from PyQt4 import QtGui
-from src.MVC.view import MyView
+from PyQt4.QtCore import QRect
+from src.VC.MyPopup import MyPopup
 
 """
 @author: Muhammed Kanyildiz, Maximilian Wech
@@ -14,14 +15,14 @@ class MyModel():
     view    Instanz der View Klasse
     """
     view = None
-
+    level = ""
     def setView(self, MyView):
         """
         Eine neue View erstellen
         :param MyView: die View Klasse
         """
-        self.view = MyView()
-
+        self.view = MyView
+        self.level = ""
     def neustart(self):
         """
         Mit dieser Methode werden alle im Array gespeicherten Felder gelöscht und die Spielfläche wird wieder ins
@@ -30,9 +31,9 @@ class MyModel():
         for j in range(15):
             for i in range(15):
                 list = [j, i]
-                self.tableWidget_2.setItem(j,i,QtGui.QTableWidgetItem())
-                self.tableWidget_2.item(j,i).setBackground(QtGui.QColor('white'))
-        self.level = self.comboBox.currentText()
+                self.view.tableWidget_2.setItem(j,i,QtGui.QTableWidgetItem())
+                self.view.tableWidget_2.item(j,i).setBackground(QtGui.QColor('white'))
+        self.level = self.view.comboBox.currentText()
 
         if self.level == "Medium":
             self.erg = [[0,8],[0,9],
@@ -85,8 +86,8 @@ class MyModel():
         """
         list = [row, column]
         self.liste.append([row, column])
-        self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
-        item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
+        self.view.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
+        item = self.view.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
 
     def cell_was_clicked(self, row, column):
 
@@ -97,16 +98,16 @@ class MyModel():
         :param column: die Spaltenzahl, in der sich die geklickte Zelle befindet
         """
         list = [row, column]
-        self.cells_left()
+      #  self.cells_left()
         if list in self.liste:
-            self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
-            item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('white'))
+            self.view.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
+            item = self.view.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('white'))
             a = self.liste.index(list)
             del self.liste[a]
         else:
             self.liste.append([row, column])
-            self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
-            item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
+            self.view.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
+            item = self.view.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
 
         if self.liste == self.erg:
             self.w = MyPopup()
@@ -119,7 +120,7 @@ class MyModel():
         """
         Zeigt die Lösung an; dabei werden die entsprechenden Felder schwarz angemalt.
         """
-        self.level = self.comboBox.currentText()
+        self.level = self.view.comboBox.currentText()
         self.neustart()
         if self.level == "Medium":
             self.erg = [[0,8],[0,9],
@@ -178,7 +179,7 @@ class MyModel():
             if self.erg[z] in self.liste:
                 i -= 1
 
-        self.lineEdit.setText(str(i))
+        self.view.lineEdit.setText(str(i))
 
     def fill_tab(self):
         """
@@ -206,8 +207,8 @@ class MyModel():
                 for i in range(8):
                     list = [j, i]
                     self.led = QtGui.QLineEdit(str(list_bes[j][i]))
-                    self.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+                    self.view.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
+                    self.view.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
                  #   self.tableWidget_3.item(j,i).setText("xy")
 
             # filling table up
@@ -223,8 +224,8 @@ class MyModel():
                 for i in range(15):
                     list = [j, i]
                     self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
-                    self.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+                    self.view.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
+                    self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
                  #   self.tableWidget_3.item(j,i).setText("xy")
         elif (self.level == "Easy"):
             # filling table left
@@ -247,8 +248,8 @@ class MyModel():
                 for i in range(8):
                     list = [j, i]
                     self.led = QtGui.QLineEdit(str(list_bes[j][i]))
-                    self.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+                    self.view.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
+                    self.view.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
                  #   self.tableWidget_3.item(j,i).setText("xy")
 
             # filling table up
@@ -264,8 +265,8 @@ class MyModel():
                 for i in range(15):
                     list = [j, i]
                     self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
-                    self.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+                    self.view.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
+                    self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
                  #   self.tableWidget_3.item(j,i).setText("xy")
         elif (self.level == "Hard"):
             # filling table left
@@ -288,8 +289,8 @@ class MyModel():
                 for i in range(8):
                     list = [j, i]
                     self.led = QtGui.QLineEdit(str(list_bes[j][i]))
-                    self.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+                    self.view.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
+                    self.view.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
                  #   self.tableWidget_3.item(j,i).setText("xy")
 
             # filling table up
@@ -305,6 +306,6 @@ class MyModel():
                 for i in range(15):
                     list = [j, i]
                     self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
-                    self.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+                    self.view.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
+                    self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
                  #   self.tableWidget_3.item(j,i).setText("xy")

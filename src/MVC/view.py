@@ -1,5 +1,5 @@
 from PyQt4.examples.dialogs.standarddialogs import Dialog
-from src.MVC.controller import MyController
+
 from src.MVC.model import MyModel
 from PyQt4 import QtCore, QtGui
 
@@ -10,7 +10,7 @@ from PyQt4 import QtCore, QtGui
               und initialisiert werden.
 """
 
-class MyView(QtGui.QWidget, MyModel, MyController):
+class MyView(QtGui.QWidget):
     """
     MyView
     :param MyView: QWidget
@@ -32,6 +32,9 @@ class MyView(QtGui.QWidget, MyModel, MyController):
         """
         Konstruktor
         """
+        self.m = MyModel
+        self.c = MyController
+
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
         MyView.liste = []
@@ -39,7 +42,7 @@ class MyView(QtGui.QWidget, MyModel, MyController):
         MyView.erg = []
 
     def setupUi(self, Dialog):
-     """
+        """
         Diese Methode erstellt und konfiguriert die Elemente des GUI's.
         :param Dialog:
         :return setupUi()
