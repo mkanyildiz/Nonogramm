@@ -15,6 +15,7 @@ class MyModel():
                 self.view.tableWidget_2.item(j,i).setBackground(QtGui.QColor('black'))
 
     def cell_was_clicked(self, row, column):
+        print("Clicked")
         list = [row, column]
         if list in self.view.liste:
             self.view.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())

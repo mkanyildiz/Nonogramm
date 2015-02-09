@@ -4,9 +4,11 @@ from src.MVC.model import MyModel
 __author__ = 'mwech'
 
 class MyController():
+    a = None
+
     def __init__(self):
-        self.view = MyView()
         self.model = MyModel()
+        self.view = MyView(self.model, self)
 
     def main(self):
         self.view.show()

@@ -6,10 +6,21 @@ from PyQt4 import QtCore, QtGui
 from PyQt4.Qt import *
 from src.VC.MyPopup import MyPopup
 
+"""
+@author: Kanyildiz
+@date: 09.02.2015
+"""
+
 class MyView(QtGui.QWidget):
+    """
+    MyView
+    :param MyView: QWidget
+    """
     liste = []
     level = []
     erg = []
+
+
     def __init__(self):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
@@ -18,6 +29,11 @@ class MyView(QtGui.QWidget):
         MyView.erg = []
 
     def setupUi(self, Dialog):
+        """
+
+        :param Dialog:
+        :return setupUi()
+        """
         try:
             _fromUtf8 = QtCore.QString.fromUtf8
         except AttributeError:
@@ -110,6 +126,11 @@ class MyView(QtGui.QWidget):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
+        """
+
+        :param Dialog:
+        :return retranslateUi()
+        """
         try:
             _encoding = QtGui.QApplication.UnicodeUTF8
             def _translate(context, text, disambig):
@@ -138,6 +159,12 @@ class MyView(QtGui.QWidget):
         self.pushButton.clicked.connect(self.loesung)
 
     def fill_tab(self):
+
+        """
+        fill_tab
+        :rtype : je nachdem welcher muster gewählt wurde werden die seitlichentabellen bzw. die tabelle über der Spielfläche mit zahlen versehen die zur beschriftung dienen
+        """
+
         if (self.level == "Medium"):
             # filling table left
             list_bes = [[2,0,0,0,0,0,0,0],
@@ -263,6 +290,10 @@ class MyView(QtGui.QWidget):
                  #   self.tableWidget_3.item(j,i).setText("xy")
 
     def neustart(self):
+        """
+        neustart()
+        :rtype : alle felder werden gelöscht und die spielfläche wird wieder ins anfangs stadium zurück versetzt
+        """
         for j in range(15):
             for i in range(15):
                 list = [j, i]
@@ -313,7 +344,16 @@ class MyView(QtGui.QWidget):
         self.liste = []
 
     def cell_was_clicked(self, row, column):
+        """
+
+        cell_was_clicked(row,column)
+
+        :rtype : die methode füllt eine zelle mit schwarzer farbe falls eine zelle angeklickt wird. Desweiteren wir die zelle wieder weiß angemalt falls diese bereits geklickt wurde
+        :param row: die zeilen anzahl wo sich die geklickte zelle befindet
+        :param column: die spalten anzahl wo sich die geklickte zelle befindet
+        """
         list = [row, column]
+        self.cells_left()
         if list in self.liste:
             self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
             item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('white'))
@@ -328,15 +368,29 @@ class MyView(QtGui.QWidget):
             self.w = MyPopup()
             self.w.setGeometry(QRect(100, 100, 400, 200))
             self.w.show()
+            self.neustart()
             self.liste = []
 
+
     def cell_clicked(self, row, column):
+        """
+
+        cell_clicked(row,column)
+
+        :rtype : diese methode ähnelt der cell_was_clicked methode. Der einzige unterschied liegt darin, dass wir hier nicht überprüfen ob die zelle bereits geklickt wurde da dies beim lösung anzeigen vom nachteil ist
+        :param row: die zeilen anzahl wo sich die geklickte zelle befindet
+        :param column: die spalten anzahl wo sich die geklickte zelle befindet
+        """
         list = [row, column]
         self.liste.append([row, column])
         self.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
         item = self.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
 
     def loesung(self):
+        """
+        loesung()
+        :rtype : hier wird die lösung ausgegeben
+        """
         self.level = self.comboBox.currentText()
         self.neustart()
         if self.level == "Medium":
@@ -381,4 +435,17 @@ class MyView(QtGui.QWidget):
         for z in range(len(self.erg)):
             self.cell_clicked(self.erg[z][0], self.erg[z][1])
 
-      #  def cells_left():
+    def cells_left(self):
+        i = len(self.erg)
+        z=0
+        for self.erg in self.liste:
+            z += 1
+            print(self.liste)
+            if self.erg[z] not in self.liste:
+                i += 1
+            if self.erg[z] in self.liste:
+                i -= 1
+
+        self.lineEdit.setText(str(i))
+
+

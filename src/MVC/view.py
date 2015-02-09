@@ -7,11 +7,14 @@ from PyQt4 import QtCore, QtGui
 
 class MyView(QtGui.QWidget):
     liste = []
-
-    def __init__(self):
+    m = None
+    c = None
+    def __init__(self,m, c):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
         MyView.liste = []
+        self.m = m()
+        self.controller = c()
 
     def setupUi(self, Dialog):
         try:
