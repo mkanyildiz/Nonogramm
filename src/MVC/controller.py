@@ -1,17 +1,38 @@
 from src.MVC.view import MyView
 from src.MVC.model import MyModel
 
-__author__ = 'mwech'
+"""
+@author: Muhammed Kanyildiz, Maximilian Wech
+@version: 20150209
+@description: Reaktionen auf Eingaben des Benutzers durchführen.
+"""
 
-class MyController():
-    a = None
+class MyController(MyModel):
+    """
+    Attributes:
+    model   Instanz der Model Klasse
+    view    Instanz der View Klasse
+    """
+    model = None
+    view = None
 
-    def __init__(self):
+    def __init__(self, MyModel):
+        """
+        Konstruktor
+        """
         self.model = MyModel()
         self.view = MyView(self.model, self)
+        self.model.setView(self.view)
 
     def main(self):
+        """
+        Anzeige des GUI's mittels der show() Methode, Ausführung von Methoden um den Spielstart zu gewährleisten;
+        Reaktionen auf Button / Spielfeld Klicks --> Reaktion auf Benutzereingaben.
+
+        """
         self.view.show()
+        self.view.fill_tab()
+        self.view.neustart()
         self.view.pushButton_2.clicked.connect(self.model.neustart)
         self.view.tableWidget_2.cellClicked.connect(self.model.cell_was_clicked)
         self.view.pushButton.clicked.connect(self.model.loesung)

@@ -1,27 +1,33 @@
 from PyQt4.examples.dialogs.standarddialogs import Dialog
-
-__author__ = 'mwech'
-
 from PyQt4 import QtCore, QtGui
 from PyQt4.Qt import *
 from src.VC.MyPopup import MyPopup
 
 """
-@author: Kanyildiz
-@date: 09.02.2015
+@author: Muhammed Kanyildiz, Maximilian Wech
+@version: 20150209
+@description: In dieser Klasse wird das GUI aufgebaut. Dies bedeutet, dass die Widgets, Buttons, Labels, etc. erstellt
+              und initialisiert werden.
 """
 
 class MyView(QtGui.QWidget):
     """
     MyView
     :param MyView: QWidget
+
+    Attributes:
+    liste   Array für das Speichern der vom Benutzer ausgewählten Felder.
+    level   Die Spielschwierigkeit; Anzahl der vorgegebenen Zahlen
+    erg     In dieses Array werden die richtigen Felder (Lösungsfelder) gespeichert.
     """
     liste = []
     level = []
     erg = []
 
-
     def __init__(self):
+        """
+        Konstruktor
+        """
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
         MyView.liste = []
@@ -30,7 +36,7 @@ class MyView(QtGui.QWidget):
 
     def setupUi(self, Dialog):
         """
-
+        Diese Methode erstellt und konfiguriert die Elemente des GUI's.
         :param Dialog:
         :return setupUi()
         """
@@ -127,7 +133,7 @@ class MyView(QtGui.QWidget):
 
     def retranslateUi(self, Dialog):
         """
-
+        Es werden die textuellen Einstellungen der geänderten Komponenten umgesetzt.
         :param Dialog:
         :return retranslateUi()
         """
@@ -159,12 +165,10 @@ class MyView(QtGui.QWidget):
         self.pushButton.clicked.connect(self.loesung)
 
     def fill_tab(self):
-
         """
-        fill_tab
-        :rtype : je nachdem welcher muster gewählt wurde werden die seitlichentabellen bzw. die tabelle über der Spielfläche mit zahlen versehen die zur beschriftung dienen
+        Je nachdem, welches Muster gewählt wurde, werden die seitliche Tabelle und die Tabelle über der Spielfläche mit
+        Zahlen versehen, welche zur Beschriftung dienen.
         """
-
         if (self.level == "Medium"):
             # filling table left
             list_bes = [[2,0,0,0,0,0,0,0],
@@ -291,8 +295,8 @@ class MyView(QtGui.QWidget):
 
     def neustart(self):
         """
-        neustart()
-        :rtype : alle felder werden gelöscht und die spielfläche wird wieder ins anfangs stadium zurück versetzt
+        Mit dieser Methode werden alle im Array gespeicherten Felder gelöscht und die Spielfläche wird wieder ins
+        Anfangsstadium zurückversetzt, sprich in weißer Farbe.
         """
         for j in range(15):
             for i in range(15):
@@ -344,13 +348,12 @@ class MyView(QtGui.QWidget):
         self.liste = []
 
     def cell_was_clicked(self, row, column):
+
         """
-
-        cell_was_clicked(row,column)
-
-        :rtype : die methode füllt eine zelle mit schwarzer farbe falls eine zelle angeklickt wird. Desweiteren wir die zelle wieder weiß angemalt falls diese bereits geklickt wurde
-        :param row: die zeilen anzahl wo sich die geklickte zelle befindet
-        :param column: die spalten anzahl wo sich die geklickte zelle befindet
+        Die Methode füllt eine Zelle mit schwarzer Farbe, falls eine Zelle angeklickt wurde. Des Weiteren wird die
+        Zelle wieder weiß angemalt, falls diese bereits geklickt wurde.
+        :param row: die Zeilenzahl, in der sich die geklickte zelle befindet
+        :param column: die Spaltenzahl, in der sich die geklickte Zelle befindet
         """
         list = [row, column]
         self.cells_left()
@@ -374,12 +377,10 @@ class MyView(QtGui.QWidget):
 
     def cell_clicked(self, row, column):
         """
-
-        cell_clicked(row,column)
-
-        :rtype : diese methode ähnelt der cell_was_clicked methode. Der einzige unterschied liegt darin, dass wir hier nicht überprüfen ob die zelle bereits geklickt wurde da dies beim lösung anzeigen vom nachteil ist
-        :param row: die zeilen anzahl wo sich die geklickte zelle befindet
-        :param column: die spalten anzahl wo sich die geklickte zelle befindet
+        Diese methode ist der cell_was_clicked methode. Der einzige Unterschied liegt darin, dass wir hier nicht
+        überprüfen, ob die Zelle bereits geklickt wurde, da dies beim "Lösung anzeigen" von Nachteil ist.
+        :param row: die Zeilenzahl, in der sich die geklickte Zelle befindet
+        :param column: die Spaltenzahl, in der sich die geklickte Zelle befindet
         """
         list = [row, column]
         self.liste.append([row, column])
@@ -388,8 +389,7 @@ class MyView(QtGui.QWidget):
 
     def loesung(self):
         """
-        loesung()
-        :rtype : hier wird die lösung ausgegeben
+        Zeigt die Lösung an; dabei werden die entsprechenden Felder schwarz angemalt.
         """
         self.level = self.comboBox.currentText()
         self.neustart()
@@ -436,6 +436,10 @@ class MyView(QtGui.QWidget):
             self.cell_clicked(self.erg[z][0], self.erg[z][1])
 
     def cells_left(self):
+        """
+        Diese Methode zeigt an, wie viele, noch nicht ausgewählte Felder, noch ausstehend sind.
+        """
+
         i = len(self.erg)
         z=0
         for self.erg in self.liste:

@@ -1,22 +1,49 @@
 from PyQt4.examples.dialogs.standarddialogs import Dialog
-
-__author__ = 'mwech'
-
+from src.MVC.controller import MyController
+from src.MVC.model import MyModel
 from PyQt4 import QtCore, QtGui
 
+"""
+@author: Muhammed Kanyildiz, Maximilian Wech
+@version: 20150209
+@description: In dieser Klasse wird das GUI aufgebaut. Dies bedeutet, dass die Widgets, Buttons, Labels, etc. erstellt
+              und initialisiert werden.
+"""
 
-class MyView(QtGui.QWidget):
+class MyView(QtGui.QWidget, MyModel, MyController):
+    """
+    MyView
+    :param MyView: QWidget
+
+    Attributes:
+    liste   Array für das Speichern der vom Benutzer ausgewählten Felder.
+    level   Die Spielschwierigkeit; Anzahl der vorgegebenen Zahlen
+    erg     In dieses Array werden die richtigen Felder (Lösungsfelder) gespeichert.
+    m       Instanz der Model Klasse
+    c       Instanz der Controller Klasse
+    """
     liste = []
+    level = []
+    erg = []
     m = None
     c = None
-    def __init__(self,m, c):
+
+    def __init__(self, MyModel, MyController):
+        """
+        Konstruktor
+        """
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
         MyView.liste = []
-        self.m = m()
-        self.controller = c()
+        MyView.level = []
+        MyView.erg = []
 
     def setupUi(self, Dialog):
+     """
+        Diese Methode erstellt und konfiguriert die Elemente des GUI's.
+        :param Dialog:
+        :return setupUi()
+        """
         try:
             _fromUtf8 = QtCore.QString.fromUtf8
         except AttributeError:
@@ -109,6 +136,11 @@ class MyView(QtGui.QWidget):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
+        """
+        Es werden die textuellen Einstellungen der geänderten Komponenten umgesetzt.
+        :param Dialog:
+        :return retranslateUi()
+        """
         try:
             _encoding = QtGui.QApplication.UnicodeUTF8
             def _translate(context, text, disambig):
@@ -127,50 +159,5 @@ class MyView(QtGui.QWidget):
         self.comboBox.setItemText(0, _translate("Dialog", "Easy", None))
         self.comboBox.setItemText(1, _translate("Dialog", "Medium", None))
         self.comboBox.setItemText(2, _translate("Dialog", "Hard", None))
-
-        # filling table left
-        list_bes = [[2,0,0,0,0,0,0,0],
-                     [2,3,0,0,0,0,0,0],
-                     [1,2,4,0,0,0,0,0],
-                     [9,0,0,0,0,0,0,0],
-                     [6,0,0,0,0,0,0,0],
-                     [6,0,0,0,0,0,0,0],
-                     [6,0,0,0,0,0,0,0],
-                     [1,1,3,0,0,0,0,0],
-                     [2,0,0,0,0,0,0,0],
-                     [2,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0]]
-        for j in range(15):
-            for i in range(8):
-                list = [j, i]
-                self.led = QtGui.QLineEdit(str(list_bes[j][i]))
-                self.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
-                self.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
-             #   self.tableWidget_3.item(j,i).setText("xy")
-
-        # filling table up
-        list_bes2 = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,1,5,0,0,0,7,4,3,0,0,0,0,0],
-                    [1,2,2,1,5,5,5,1,2,3,0,0,0,0,0]]
-        for j in range(8):
-            for i in range(15):
-                list = [j, i]
-                self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
-                self.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
-                self.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
-             #   self.tableWidget_3.item(j,i).setText("xy")
-
-
-       # for y in range(50):
-
 
 
