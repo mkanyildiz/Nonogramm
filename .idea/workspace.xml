@@ -2,8 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7717174c-52fb-45a4-a625-9f6e3b7d2dd2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/.doctrees/Nonogramm.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/comment-bright.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/comment-close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/comment.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/down-pressed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/.doctrees/environment.pickle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/file.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/.doctrees/index.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/minus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/objects.inv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/up-pressed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/.buildinfo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Nonogramm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Nonogramm.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_sources/Nonogramm.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MVC/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/basic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/conf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MVC/conf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/doctools.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/genindex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_sources/index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/jquery-1.11.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/make.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/pygments.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/search.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/searchindex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/searchtools.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/sidebar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/underscore-1.3.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/underscore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_static/websupport.js" />
+      <change type="MOVED" beforePath="C:\Users\mwech\PycharmProjects\Nonogramm\src\VC\MyPopup.py" afterPath="$PROJECT_DIR$/src/MVC/MyPopup.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MVC/controller.py" afterPath="$PROJECT_DIR$/src/MVC/controller.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MVC/model.py" afterPath="$PROJECT_DIR$/src/MVC/model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VC/view.py" afterPath="$PROJECT_DIR$/src/VC/view.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Nonogramm.iws" />
@@ -20,13 +63,14 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Nonogramm$xy.coverage" NAME="xy Coverage Results" MODIFIED="1421608346853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Nonogramm$main.coverage" NAME="main Coverage Results" MODIFIED="1422288270618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Nonogramm$model.coverage" NAME="model Coverage Results" MODIFIED="1423570863053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/MVC" />
+    <SUITE FILE_PATH="coverage/Nonogramm$model.coverage" NAME="model Coverage Results" MODIFIED="1423574088955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/MVC" />
     <SUITE FILE_PATH="coverage/Nonogramm$view.coverage" NAME="view Coverage Results" MODIFIED="1421599046934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Nonogramm$Nonogramm.coverage" NAME="Nonogramm Coverage Results" MODIFIED="1423573623530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Nonogramm$controller__1_.coverage" NAME="controller (1) Coverage Results" MODIFIED="1421675661825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Nonogramm$ggt1.coverage" NAME="ggt1 Coverage Results" MODIFIED="1421746008000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Nonogramm$xy__1_.coverage" NAME="xy (1) Coverage Results" MODIFIED="1421664211271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Nonogramm$Doc.coverage" NAME="Doc Coverage Results" MODIFIED="1423504292267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Nonogramm$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1423572196676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/MVC" />
+    <SUITE FILE_PATH="coverage/Nonogramm$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1423574136275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/MVC" />
     <SUITE FILE_PATH="coverage/Nonogramm$controller.coverage" NAME="controller Coverage Results" MODIFIED="1422376347385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Nonogramm$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1423513487572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/VC" />
     <SUITE FILE_PATH="coverage/Nonogramm$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1423428759649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
@@ -50,54 +94,7 @@
     <favorites_list name="Nonogramm" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="controller.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MVC/controller.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69186044" vertical-offset="0" max-vertical-offset="765">
-              <caret line="28" column="87" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="87" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MVC/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2570" max-vertical-offset="5287">
-              <caret line="166" column="18" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MVC/view.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2924">
-              <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MVC/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,6 +121,7 @@
         <option value="$PROJECT_DIR$/src/VC/MyPopup.py" />
         <option value="$PROJECT_DIR$/src/MVC/view.py" />
         <option value="$PROJECT_DIR$/src/MVC/controller.py" />
+        <option value="$PROJECT_DIR$/src/MVC/MyPopup.py" />
         <option value="$PROJECT_DIR$/src/MVC/model.py" />
       </list>
     </option>
@@ -216,7 +214,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/VC/doc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/doc" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
@@ -235,6 +233,7 @@
       <recent name="C:\Users\mwech\PycharmProjects\Nonogramm\src\VC\doc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mwech\PycharmProjects\Nonogramm\src\MVC" />
       <recent name="C:\Users\mwech\PycharmProjects\Nonogramm\src\VC" />
       <recent name="C:\Users\mwech\PycharmProjects\Nonogramm\src\status" />
       <recent name="C:\Users\mwech\PycharmProjects\Nonogramm\src" />
@@ -318,7 +317,9 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/MVC/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -587,6 +588,26 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="Nonogramm" type="docs" factoryName="Sphinx task">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="C:\Python34\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Nonogramm" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="docutils_input_file" value="C:\Users\mwech\PycharmProjects\Nonogramm\src\MVC" />
+      <option name="docutils_output_file" value="C:\Users\mwech\PycharmProjects\Nonogramm\doc" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="html" />
+      <option name="docutils_open_in_browser" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <configuration default="false" name="Doc" type="docs" factoryName="Sphinx task">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -607,15 +628,16 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <list size="8">
+    <list size="9">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
       <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python docs.Doc" />
-      <item index="3" class="java.lang.String" itemvalue="Python.controller" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ggt1" />
-      <item index="5" class="java.lang.String" itemvalue="Python.main (2)" />
-      <item index="6" class="java.lang.String" itemvalue="Python.main (3)" />
-      <item index="7" class="java.lang.String" itemvalue="Python.model" />
+      <item index="2" class="java.lang.String" itemvalue="Python.controller" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ggt1" />
+      <item index="4" class="java.lang.String" itemvalue="Python.main (2)" />
+      <item index="5" class="java.lang.String" itemvalue="Python.main (3)" />
+      <item index="6" class="java.lang.String" itemvalue="Python.model" />
+      <item index="7" class="java.lang.String" itemvalue="Python docs.Nonogramm" />
+      <item index="8" class="java.lang.String" itemvalue="Python docs.Doc" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -668,7 +690,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422288640337</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changing the game level updates the tables now">
+      <created>1423572294554</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1423572294554</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -697,19 +725,19 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33549082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22222222" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22222222" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.259375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -761,7 +789,8 @@
     <MESSAGE value="Added package and changed class names" />
     <MESSAGE value="Cell- Color Changes now possible" />
     <MESSAGE value="[not working]- progress; MVC concept should work, Model Class: Not possible to connect to the View attributes" />
-    <option name="LAST_COMMIT_MESSAGE" value="[not working]- progress; MVC concept should work, Model Class: Not possible to connect to the View attributes" />
+    <MESSAGE value="Changing the game level updates the tables now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing the game level updates the tables now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -784,9 +813,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5372">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -814,9 +841,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5372">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -844,9 +869,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5389">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -881,9 +904,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="850">
           <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -915,9 +936,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +988,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VC/MyPopup.py">
+    <entry file="file://$PROJECT_DIR$/src/MVC/MyPopup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="340">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
@@ -997,7 +1016,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VC/MyPopup.py">
+    <entry file="file://$PROJECT_DIR$/src/MVC/MyPopup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1109,54 +1128,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VC/MyPopup.py">
+    <entry file="file://$PROJECT_DIR$/src/MVC/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17321688" vertical-offset="0" max-vertical-offset="687">
-          <caret line="7" column="106" selection-start-line="7" selection-start-column="106" selection-end-line="7" selection-end-column="106" />
+        <state vertical-scroll-proportion="0.12354651" vertical-offset="0" max-vertical-offset="688">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MVC/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7165698" vertical-offset="0" max-vertical-offset="748">
+          <caret line="29" column="83" selection-start-line="29" selection-start-column="83" selection-end-line="29" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/VC/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6069869" vertical-offset="2286" max-vertical-offset="7837">
-          <caret line="159" column="7" selection-start-line="159" selection-start-column="7" selection-end-line="159" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.9571865" vertical-offset="5613" max-vertical-offset="7786">
+          <caret line="370" column="23" selection-start-line="370" selection-start-column="21" selection-end-line="370" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MVC/main.py">
+    <entry file="file://$PROJECT_DIR$/src/MVC/MyPopup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.17296511" vertical-offset="0" max-vertical-offset="688">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MVC/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.049418606" vertical-offset="17" max-vertical-offset="5321">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MVC/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="725" max-vertical-offset="2924">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.9636628" vertical-offset="0" max-vertical-offset="2924">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="10" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MVC/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2570" max-vertical-offset="5287">
-          <caret line="166" column="18" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MVC/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69186044" vertical-offset="0" max-vertical-offset="765">
-          <caret line="28" column="87" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="87" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,8 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import QRect
-from src.VC.MyPopup import MyPopup
+from src.MVC import MyPopup
+from src.MVC.MyPopup import Popup
+
 
 """
 @author: Muhammed Kanyildiz, Maximilian Wech
@@ -106,7 +108,7 @@ class MyModel():
             item = self.view.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('black'))
 
         if self.liste == self.erg:
-            self.w = MyPopup()
+            self.w = Popup()
             self.w.setGeometry(QRect(100, 100, 400, 200))
             self.w.show()
             self.neustart()

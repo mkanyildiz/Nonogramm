@@ -1,7 +1,8 @@
-from PyQt4.examples.dialogs.standarddialogs import Dialog
 from PyQt4 import QtCore, QtGui
 from PyQt4.Qt import *
-from src.VC.MyPopup import MyPopup
+
+from src.MVC import MyPopup
+
 
 """
 @author: Muhammed Kanyildiz, Maximilian Wech

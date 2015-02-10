@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Nonogramm &mdash; Nonogramm 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Nonogramm 1 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to Nonogramm’s documentation!" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Nonogramm’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Nonogramm 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="nonogramm">
+<h1>Nonogramm<a class="headerlink" href="#nonogramm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="view">
+<h2>view<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="src.MVC.view.MyView">
+<em class="property">class </em><code class="descclassname">src.MVC.view.</code><code class="descname">MyView</code><span class="sig-paren">(</span><em>MyModel</em>, <em>MyController</em><span class="sig-paren">)</span><a class="headerlink" href="#src.MVC.view.MyView" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>MyView</strong> &#8211; QWidget</td>
+</tr>
+</tbody>
+</table>
+<p>Attributes:
+liste   Array für das Speichern der vom Benutzer ausgewählten Felder.
+level   Die Spielschwierigkeit; Anzahl der vorgegebenen Zahlen
+erg     In dieses Array werden die richtigen Felder (Lösungsfelder) gespeichert.
+m       Instanz der Model Klasse
+c       Instanz der Controller Klasse</p>
+<dl class="method">
+<dt id="src.MVC.view.MyView.retranslateUi">
+<code class="descname">retranslateUi</code><span class="sig-paren">(</span><em>Dialog</em><span class="sig-paren">)</span><a class="headerlink" href="#src.MVC.view.MyView.retranslateUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Es werden die textuellen Einstellungen der geänderten Komponenten umgesetzt.
+:param Dialog:
+:return retranslateUi()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.MVC.view.MyView.setupUi">
+<code class="descname">setupUi</code><span class="sig-paren">(</span><em>Dialog</em><span class="sig-paren">)</span><a class="headerlink" href="#src.MVC.view.MyView.setupUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Diese Methode erstellt und konfiguriert die Elemente des GUI&#8217;s.
+:param Dialog:
+:return setupUi()</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="controller">
+<h2>controller<a class="headerlink" href="#controller" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="src.MVC.controller.MyController">
+<em class="property">class </em><code class="descclassname">src.MVC.controller.</code><code class="descname">MyController</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#src.MVC.controller.MyController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attributes:
+model   Instanz der Model Klasse
+view    Instanz der View Klasse</p>
+<dl class="method">
+<dt id="src.MVC.controller.MyController.main">
+<code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.MVC.controller.MyController.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Anzeige des GUI&#8217;s mittels der show() Methode, Ausführung von Methoden um den Spielstart zu gewährleisten;
+Reaktionen auf Button / Spielfeld Klicks &#8211;&gt; Reaktion auf Benutzereingaben.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h2>view<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">src.MVC.view.</code><code class="descname">MyView</code><span class="sig-paren">(</span><em>MyModel</em>, <em>MyController</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>MyView</strong> &#8211; QWidget</td>
+</tr>
+</tbody>
+</table>
+<p>Attributes:
+liste   Array für das Speichern der vom Benutzer ausgewählten Felder.
+level   Die Spielschwierigkeit; Anzahl der vorgegebenen Zahlen
+erg     In dieses Array werden die richtigen Felder (Lösungsfelder) gespeichert.
+m       Instanz der Model Klasse
+c       Instanz der Controller Klasse</p>
+<dl class="method">
+<dt>
+<code class="descname">retranslateUi</code><span class="sig-paren">(</span><em>Dialog</em><span class="sig-paren">)</span></dt>
+<dd><p>Es werden die textuellen Einstellungen der geänderten Komponenten umgesetzt.
+:param Dialog:
+:return retranslateUi()</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">setupUi</code><span class="sig-paren">(</span><em>Dialog</em><span class="sig-paren">)</span></dt>
+<dd><p>Diese Methode erstellt und konfiguriert die Elemente des GUI&#8217;s.
+:param Dialog:
+:return setupUi()</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="mypopup">
+<h2>MyPopup<a class="headerlink" href="#mypopup" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="src.MVC.MyPopup.MyPopup">
+<em class="property">class </em><code class="descclassname">src.MVC.MyPopup.</code><code class="descname">MyPopup</code><a class="headerlink" href="#src.MVC.MyPopup.MyPopup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Nonogramm</a><ul>
+<li><a class="reference internal" href="#view">view</a></li>
+<li><a class="reference internal" href="#controller">controller</a></li>
+<li><a class="reference internal" href="#id1">view</a></li>
+<li><a class="reference internal" href="#mypopup">MyPopup</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Nonogramm&#8217;s documentation!</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Nonogramm.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Nonogramm’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Nonogramm 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Kanyiliz, Wech.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+    </div>
+  </body>
+</html>

@@ -28,7 +28,6 @@ class MyController(MyModel):
         """
         Anzeige des GUI's mittels der show() Methode, Ausführung von Methoden um den Spielstart zu gewährleisten;
         Reaktionen auf Button / Spielfeld Klicks --> Reaktion auf Benutzereingaben.
-
         """
         self.view.show()
         self.model.fill_tab()

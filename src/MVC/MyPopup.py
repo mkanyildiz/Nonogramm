@@ -7,7 +7,7 @@ from PyQt4 import QtCore, QtGui
 @version: 20150209
 @description: In dieser Klasse wird ein Game Over Fenster erstellt, falls der Benutzer das Spiel verliert.
 """
-class MyPopup(QtGui.QWidget):
+class Popup(QtGui.QWidget):
 
     def __init__(self):
         """
