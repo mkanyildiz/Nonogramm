@@ -36,3 +36,5 @@ class MyController(MyModel):
         self.view.pushButton_2.clicked.connect(self.model.neustart)
         self.view.tableWidget_2.cellClicked.connect(self.model.cell_was_clicked)
         self.view.pushButton.clicked.connect(self.model.loesung)
+        level = self.view.comboBox.currentText()
+        self.view.comboBox.currentIndexChanged.connect(self.model.neustart)

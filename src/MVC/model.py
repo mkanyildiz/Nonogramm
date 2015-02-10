@@ -46,13 +46,9 @@ class MyModel():
                 [7,3],[7,5],[7,7],[7,8],[7,9],
                 [8,8],[8,9],
                 [9,7],[9,8]]
-            #for z in range(len(self.erg)):
-            #    self.cell_clicked(self.erg[z][0], self.erg[z][1])
 
         elif self.level == "Easy":
             self.erg = [[7,7]]
-          #  for z in range(len(self.erg)):
-          #     self.cell_clicked(self.erg[z][0], self.erg[z][1])
 
         elif self.level == "Hard":
             self.erg = [
@@ -133,13 +129,9 @@ class MyModel():
                 [7,3],[7,5],[7,7],[7,8],[7,9],
                 [8,8],[8,9],
                 [9,7],[9,8]]
-            #for z in range(len(self.erg)):
-            #    self.cell_clicked(self.erg[z][0], self.erg[z][1])
 
         elif self.level == "Easy":
             self.erg = [[7,7]]
-          #  for z in range(len(self.erg)):
-          #     self.cell_clicked(self.erg[z][0], self.erg[z][1])
 
         elif self.level == "Hard":
             self.erg = [
@@ -172,7 +164,7 @@ class MyModel():
 
         z=len(self.erg)
         for i in range(len(self.erg)):
-            print(self.liste)
+            #print(self.liste)
           #  if self.erg[i] not in self.liste:
          #     z += 1
             if self.erg[i] in self.liste:
@@ -208,7 +200,7 @@ class MyModel():
                     self.led = QtGui.QLineEdit(str(list_bes[j][i]))
                     self.view.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
                     self.view.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
-                 #   self.tableWidget_3.item(j,i).setText("xy")
+
 
             # filling table up
             list_bes2 = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -226,6 +218,7 @@ class MyModel():
                     self.view.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
                     self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
                  #   self.tableWidget_3.item(j,i).setText("xy")
+
         elif (self.level == "Easy"):
             # filling table left
             list_bes = [[0,0,0,0,0,0,0,0],
@@ -266,6 +259,7 @@ class MyModel():
                     self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
                     self.view.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
                     self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+
                  #   self.tableWidget_3.item(j,i).setText("xy")
         elif (self.level == "Hard"):
             # filling table left
@@ -307,4 +301,5 @@ class MyModel():
                     self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
                     self.view.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
                     self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
+
                  #   self.tableWidget_3.item(j,i).setText("xy")
