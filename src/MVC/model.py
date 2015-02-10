@@ -98,7 +98,7 @@ class MyModel():
         :param column: die Spaltenzahl, in der sich die geklickte Zelle befindet
         """
         list = [row, column]
-      #  self.cells_left()
+        self.cells_left()
         if list in self.liste:
             self.view.tableWidget_2.setItem(list[0], list[1], QtGui.QTableWidgetItem())
             item = self.view.tableWidget_2.item(list[0], list[1]).setBackground(QtGui.QColor('white'))
@@ -169,17 +169,16 @@ class MyModel():
         Diese Methode zeigt an, wie viele, noch nicht ausgewählte Felder, noch ausstehend sind.
         """
 
-        i = len(self.erg)
-        z=0
-        for self.erg in self.liste:
-            z += 1
-            print(self.liste)
-            if self.erg[z] not in self.liste:
-                i += 1
-            if self.erg[z] in self.liste:
-                i -= 1
 
-        self.view.lineEdit.setText(str(i))
+        z=len(self.erg)
+        for i in range(len(self.erg)):
+            print(self.liste)
+          #  if self.erg[i] not in self.liste:
+         #     z += 1
+            if self.erg[i] in self.liste:
+                z -= 1
+
+        self.view.lineEdit.setText(str(z))
 
     def fill_tab(self):
         """
