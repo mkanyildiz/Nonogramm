@@ -6,7 +6,6 @@ from jinja2._compat import izip
 from pip._vendor.requests.packages.urllib3.connectionpool import xrange
 from pip.backwardcompat import reduce
 
-
 """
 @author: Muhammed Kanyildiz, Maximilian Wech
 @version: 20150209
@@ -14,14 +13,14 @@ from pip.backwardcompat import reduce
               mit den GUI Elementen erstellt.
 """
 
-
-
-
-
 class MyModel():
     """
     Attributes:
-    view    Instanz der View Klasse
+    view        Instanz der View Klasse
+    level       Spielschwierigkeit
+    liste_right Tabelle rechts neben dem Spielfeld
+    liste_top   Tabelle über dem Spielfeld
+    erg         Ergebnis
     """
     view = None
     level = ""
@@ -29,6 +28,7 @@ class MyModel():
     erg2 = []
     liste_right = []
     liste_top = []
+
     def setView(self, MyView):
         """
         Eine neue View erstellen
@@ -41,11 +41,8 @@ class MyModel():
         self.liste_top = []
         self.erg2 = []
 
-
-
     def neustart(self):
         #liste als zwischenspiecher für die beschriftung
-
         """
         Mit dieser Methode werden alle im Array gespeicherten Felder gelöscht und die Spielfläche wird wieder ins
         Anfangsstadium zurückversetzt, sprich in weißer Farbe.
@@ -252,14 +249,14 @@ class MyModel():
         for j in range(len(self.liste_right)):
             length_list = len(self.liste_right[j])
             null_count = 8-length_list
-            print(self.liste_right[j])
-            print(null_count)
+            #print(self.liste_right[j])
+            #print(null_count)
             for x in range(null_count):
                 self.liste_right[j].append(0)
 
 
-        print(self.liste_right)
-        print("Hallo!")
+        #print(self.liste_right)
+        ## print("Hallo!")
 
         self.fill_tab()
         self.liste = []

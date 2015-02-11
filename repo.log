@@ -1,0 +1,422 @@
+commit faf6595b372ab2cb3dfeb6422fd2ea6bf1b8a096
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Tue Feb 10 14:16:53 2015 +0100
+
+    Added Sphinx documentation
+
+ .idea/workspace.xml              |   227 +-
+ doc/.buildinfo                   |     4 +
+ doc/.doctrees/Nonogramm.doctree  |   Bin 0 -> 17504 bytes
+ doc/.doctrees/environment.pickle |   Bin 0 -> 6066 bytes
+ doc/.doctrees/index.doctree      |   Bin 0 -> 4914 bytes
+ doc/Makefile                     |   183 +
+ doc/Nonogramm.html               |   215 +
+ doc/Nonogramm.rst                |    22 +
+ doc/_sources/Nonogramm.txt       |    22 +
+ doc/_sources/index.txt           |    24 +
+ doc/_static/ajax-loader.gif      |   Bin 0 -> 673 bytes
+ doc/_static/basic.css            |   599 +++
+ doc/_static/comment-bright.png   |   Bin 0 -> 3500 bytes
+ doc/_static/comment-close.png    |   Bin 0 -> 3578 bytes
+ doc/_static/comment.png          |   Bin 0 -> 3445 bytes
+ doc/_static/default.css          |   261 +
+ doc/_static/doctools.js          |   263 +
+ doc/_static/down-pressed.png     |   Bin 0 -> 347 bytes
+ doc/_static/down.png             |   Bin 0 -> 347 bytes
+ doc/_static/file.png             |   Bin 0 -> 358 bytes
+ doc/_static/jquery-1.11.1.js     | 10308 +++++++++++++++++++++++++++++++++++++
+ doc/_static/jquery.js            |     4 +
+ doc/_static/minus.png            |   Bin 0 -> 173 bytes
+ doc/_static/plus.png             |   Bin 0 -> 173 bytes
+ doc/_static/pygments.css         |    63 +
+ doc/_static/searchtools.js       |   622 +++
+ doc/_static/sidebar.js           |   159 +
+ doc/_static/underscore-1.3.1.js  |   999 ++++
+ doc/_static/underscore.js        |    31 +
+ doc/_static/up-pressed.png       |   Bin 0 -> 345 bytes
+ doc/_static/up.png               |   Bin 0 -> 345 bytes
+ doc/_static/websupport.js        |   808 +++
+ doc/conf.py                      |   280 +
+ doc/genindex.html                |   139 +
+ doc/index.html                   |   128 +
+ doc/index.rst                    |    24 +
+ doc/make.bat                     |   263 +
+ doc/objects.inv                  |   Bin 0 -> 305 bytes
+ doc/search.html                  |    99 +
+ doc/searchindex.js               |     1 +
+ src/MVC/MyPopup.py               |    21 +
+ src/MVC/__init__.py              |     1 +
+ src/MVC/conf.py                  |   280 +
+ src/MVC/controller.py            |     1 -
+ src/MVC/model.py                 |     6 +-
+ src/VC/MyPopup.py                |    21 -
+ src/VC/view.py                   |     5 +-
+ 47 files changed, 15953 insertions(+), 130 deletions(-)
+
+commit 86e239ef6fb9e469004ac6bd5e6eb8347017d73f
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Tue Feb 10 13:44:54 2015 +0100
+
+    Changing the game level updates the tables now
+
+ .idea/workspace.xml   | 182 ++++++++++++++++++++++++++++----------------------
+ src/MVC/controller.py |   2 +
+ src/MVC/model.py      |  15 ++---
+ 3 files changed, 109 insertions(+), 90 deletions(-)
+
+commit 3dd83d5c48edcae1b22f02fb16c0d92d56bc78c4
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Tue Feb 10 10:26:28 2015 +0100
+
+    felder offen funktion
+
+ .idea/workspace.xml                      |  91 +++++++++++++++++++++++--------
+ src/MVC/__pycache__/model.cpython-34.pyc | Bin 12207 -> 12174 bytes
+ src/MVC/model.py                         |  19 +++----
+ 3 files changed, 78 insertions(+), 32 deletions(-)
+
+commit c195a79614703e0b86999f1360c9001df66dc373
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Feb 9 21:40:14 2015 +0100
+
+    MVC finalized
+
+ .idea/workspace.xml                           | 187 +++++++++++++++++---------
+ src/MVC/__pycache__/controller.cpython-34.pyc | Bin 965 -> 1380 bytes
+ src/MVC/__pycache__/model.cpython-34.pyc      | Bin 2215 -> 12207 bytes
+ src/MVC/__pycache__/view.cpython-34.pyc       | Bin 6339 -> 5818 bytes
+ src/MVC/controller.py                         |   8 +-
+ src/MVC/model.py                              |  57 ++++----
+ src/MVC/view.py                               |   9 +-
+ src/VC/__pycache__/MyPopup.cpython-34.pyc     | Bin 788 -> 788 bytes
+ src/VC/__pycache__/controller.cpython-34.pyc  | Bin 664 -> 732 bytes
+ src/VC/__pycache__/view.cpython-34.pyc        | Bin 16574 -> 17088 bytes
+ 10 files changed, 163 insertions(+), 98 deletions(-)
+
+commit 68b07a28fbe24e46d38b8e9c8aec90fc0078bc9a
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Mon Feb 9 20:15:13 2015 +0100
+
+    Added Documentation
+
+ .idea/workspace.xml   | 453 +++++++++++++++++++++++++-------------------------
+ src/MVC/controller.py |  29 +++-
+ src/MVC/main.py       |  17 +-
+ src/MVC/model.py      | 319 ++++++++++++++++++++++++++++++++---
+ src/MVC/view.py       |  91 +++++-----
+ src/VC/MyPopup.py     |  11 +-
+ src/VC/conf.py        | 280 +++++++++++++++++++++++++++++++
+ src/VC/controller.py  |  12 +-
+ src/VC/main.py        |  13 +-
+ src/VC/view.py        |  60 +++----
+ 10 files changed, 932 insertions(+), 353 deletions(-)
+
+commit 0e38be3f1ae9e6b2b942306128b298750f264839
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Feb 9 14:03:59 2015 +0100
+
+    mvc - "A new beginning"
+
+ .idea/workspace.xml                           | 253 +++++++++++++++++++++-----
+ src/MVC/__pycache__/controller.cpython-34.pyc | Bin 0 -> 965 bytes
+ src/MVC/__pycache__/model.cpython-34.pyc      | Bin 0 -> 2215 bytes
+ src/MVC/__pycache__/view.cpython-34.pyc       | Bin 0 -> 6339 bytes
+ src/MVC/controller.py                         |   4 +-
+ src/MVC/model.py                              |   1 +
+ src/MVC/view.py                               |   7 +-
+ src/VC/__pycache__/view.cpython-34.pyc        | Bin 14804 -> 16574 bytes
+ src/VC/view.py                                |  69 ++++++-
+ 9 files changed, 283 insertions(+), 51 deletions(-)
+
+commit fa1c7438a7295b186e59a7e5bfeddf72a8e17093
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Feb 9 12:05:10 2015 +0100
+
+    fixed bug when starting the game
+
+ .idea/workspace.xml                    | 131 +++++++++++++++++++++++++--------
+ src/VC/__pycache__/view.cpython-34.pyc | Bin 12942 -> 14804 bytes
+ src/VC/view.py                         |  64 +++++++++++++---
+ 3 files changed, 154 insertions(+), 41 deletions(-)
+
+commit 0e088d63a32b27f88f0e9fbe93e818fa66ff7021
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Feb 9 00:51:06 2015 +0100
+
+    fixed bugs and finalized game
+    
+    fixed bug in the loesung function
+    outputting Gameover in a seperate window when player is finished and the
+    solution is correct
+
+ .idea/workspace.xml                          | 502 ++++++---------------------
+ src/VC/MyPopup.py                            |  14 +
+ src/VC/__pycache__/MyPopup.cpython-34.pyc    | Bin 0 -> 788 bytes
+ src/VC/__pycache__/__init__.cpython-34.pyc   | Bin 0 -> 169 bytes
+ src/VC/__pycache__/controller.cpython-34.pyc | Bin 0 -> 664 bytes
+ src/VC/__pycache__/view.cpython-34.pyc       | Bin 0 -> 12942 bytes
+ src/VC/view.py                               | 244 ++++++++++---
+ 7 files changed, 304 insertions(+), 456 deletions(-)
+
+commit fe6f8a6daadc05e1c9198e268e3d9e9ef64332c0
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Sun Feb 8 14:00:55 2015 +0100
+
+    Updated imports
+
+ src/MVC/controller.py | 4 ++--
+ src/MVC/main.py       | 2 +-
+ src/MVC/model.py      | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 245785846ec969439e8a48f9387d703fc89b20bd
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Sun Feb 8 13:56:40 2015 +0100
+
+    Separated project in two parts --> CV, MVC
+
+ src/MVC/Thumbs.db       | Bin 0 -> 18944 bytes
+ src/MVC/controller.py   |  15 +++
+ src/MVC/games.png       | Bin 0 -> 9829 bytes
+ src/MVC/main.py         |  15 +++
+ src/MVC/model.py        |  42 ++++++
+ src/MVC/nonogram_ui.py  | 137 ++++++++++++++++++++
+ src/MVC/ui_nonogramm.ui | 333 ++++++++++++++++++++++++++++++++++++++++++++++++
+ src/MVC/view.py         | 173 +++++++++++++++++++++++++
+ src/Thumbs.db           | Bin 18944 -> 0 bytes
+ src/VC/Thumbs.db        | Bin 0 -> 18944 bytes
+ src/VC/__init__.py      |   1 +
+ src/VC/controller.py    |  11 ++
+ src/VC/games.png        | Bin 0 -> 9829 bytes
+ src/VC/main.py          |  15 +++
+ src/VC/nonogram_ui.py   | 137 ++++++++++++++++++++
+ src/VC/ui_nonogramm.ui  | 333 ++++++++++++++++++++++++++++++++++++++++++++++++
+ src/VC/view.py          | 206 ++++++++++++++++++++++++++++++
+ src/controller.py       |  18 ---
+ src/games.png           | Bin 9829 -> 0 bytes
+ src/main.py             |  12 --
+ src/model.py            |  41 ------
+ src/nonogram_ui.py      | 137 --------------------
+ src/ui_nonogramm.ui     | 333 ------------------------------------------------
+ src/view.py             | 173 -------------------------
+ 24 files changed, 1418 insertions(+), 714 deletions(-)
+
+commit 0bc0185f3e51c96c34bac528831134a148cbb30e
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Tue Jan 27 18:09:24 2015 +0100
+
+    Model change
+
+ .idea/workspace.xml | 217 ++++++++++++++++++++++++++++++++++------------------
+ src/controller.py   |  10 +--
+ src/model.py        |   8 +-
+ 3 files changed, 152 insertions(+), 83 deletions(-)
+
+commit 796720d1a936230d6e832e33f27ab8c74987fecd
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Mon Jan 26 17:10:36 2015 +0100
+
+    [not working]- progress; MVC concept should work, Model Class: Not possible to connect to the View attributes
+
+ .idea/inspectionProfiles/profiles_settings.xml |   4 +-
+ .idea/workspace.xml                            | 327 ++++++++++++++++++-------
+ src/controller.py                              |   5 +-
+ src/model.py                                   |  41 +++-
+ src/view.py                                    |  44 +---
+ 5 files changed, 286 insertions(+), 135 deletions(-)
+
+commit e8b8a86b058d079d09baf997dbb3270d1cfc9846
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Mon Jan 19 15:51:56 2015 +0100
+
+    Cell- Color Changes now possible
+
+ .idea/.name         |   1 -
+ .idea/Nonogramm.iml |   8 --
+ .idea/encodings.xml |   4 -
+ .idea/misc.xml      |   4 -
+ .idea/modules.xml   |   8 --
+ .idea/vcs.xml       |   6 --
+ .idea/workspace.xml | 213 ++++++++++++++++++++++++++++++----------------------
+ src/view.py         |  15 +++-
+ 8 files changed, 135 insertions(+), 124 deletions(-)
+
+commit 75db59a65c8ae60c3cbcd370ba64e3006a8064bb
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Jan 19 15:44:17 2015 +0100
+
+    implemented delete function and lösung
+    
+    tabellen werden befüllt
+
+ .idea/workspace.xml                 |  56 +++++++++++++++----------------
+ src/__pycache__/view.cpython-34.pyc | Bin 5535 -> 7613 bytes
+ src/view.py                         |  64 +++++++++++++++++++++++++++++++++++-
+ 3 files changed, 90 insertions(+), 30 deletions(-)
+
+commit 8df60cefb09e14c24ff30931acb87294805cd3e0
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Jan 19 12:59:50 2015 +0100
+
+    optimized mvc
+
+ .idea/workspace.xml                       | 110 +++++++++++++++++++-----------
+ src/__pycache__/controller.cpython-34.pyc | Bin 0 -> 813 bytes
+ src/controller.py                         |   4 --
+ src/main.py                               |  12 ++++
+ 4 files changed, 81 insertions(+), 45 deletions(-)
+
+commit 6405f3c2bf8819dde243a1fba055279182f372d0
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Jan 19 12:52:26 2015 +0100
+
+    gitignore
+
+ .gitignore                          |   2 +-
+ .idea/workspace.xml                 |  68 ++++++++++++++++++++++++++++--------
+ src/__pycache__/view.cpython-34.pyc | Bin 5558 -> 5535 bytes
+ 3 files changed, 54 insertions(+), 16 deletions(-)
+
+commit d5f72ee67af325511a1981213259dc8ba13f7f7a
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Jan 19 12:41:06 2015 +0100
+
+    gitignore added
+
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 47d100702ba948665b6a81a3ee17ada05b8fc42a
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Mon Jan 19 12:39:02 2015 +0100
+
+    mvc lauffähig
+
+ .idea/Nonogramm.iml                     |   2 +-
+ .idea/misc.xml                          |   2 +-
+ .idea/workspace.xml                     | 186 +++++++++++---------------------
+ src/__pycache__/__init__.cpython-34.pyc | Bin 0 -> 166 bytes
+ src/__pycache__/model.cpython-34.pyc    | Bin 0 -> 458 bytes
+ src/__pycache__/view.cpython-34.pyc     | Bin 0 -> 5558 bytes
+ src/controller.py                       |   7 +-
+ src/view.py                             |   6 +-
+ 8 files changed, 75 insertions(+), 128 deletions(-)
+
+commit f728a1dc3cacdf96c5974bcedc64c559b4ac0587
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Mon Jan 19 12:16:47 2015 +0100
+
+    Update
+
+ .idea/workspace.xml | 209 ++++++++++++++++++++++++++++++++--------------------
+ src/controller.py   |   6 +-
+ src/model.py        |  22 +-----
+ src/view.py         |  18 ++++-
+ 4 files changed, 150 insertions(+), 105 deletions(-)
+
+commit 14040c46d543d5f69d874f31a833e5e639ed5a39
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Sun Jan 18 20:38:51 2015 +0100
+
+    Added package and changed class names
+
+ .idea/workspace.xml | 303 ++++++++++++++++++++++++++++++++---------------
+ Thumbs.db           | Bin 18944 -> 0 bytes
+ controller.py       |  21 ----
+ games.png           | Bin 9829 -> 0 bytes
+ model.py            |  13 --
+ nonogram_ui.py      | 137 ---------------------
+ src/Thumbs.db       | Bin 0 -> 18944 bytes
+ src/__init__.py     |   1 +
+ src/controller.py   |  22 ++++
+ src/games.png       | Bin 0 -> 9829 bytes
+ src/model.py        |  22 ++++
+ src/nonogram_ui.py  | 137 +++++++++++++++++++++
+ src/ui_nonogramm.ui | 333 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/view.py         | 122 +++++++++++++++++++
+ src/xy.py           | 153 ++++++++++++++++++++++++
+ ui_nonogramm.ui     | 333 ----------------------------------------------------
+ view.py             | 121 -------------------
+ xy.py               | 153 ------------------------
+ 18 files changed, 1000 insertions(+), 871 deletions(-)
+
+commit 4cf8b9a0f7af22028fe390e3470560e5694258fc
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Sun Jan 18 19:51:24 2015 +0100
+
+    MVC almost working
+
+ .idea/Nonogramm.iml |   2 +-
+ .idea/misc.xml      |   2 +-
+ .idea/workspace.xml | 219 ++++++++++++++++++++++++++++++++++++++--------------
+ controller.py       |  19 +++--
+ model.py            |   7 +-
+ view.py             |  41 ++++------
+ xy.py               |   3 +-
+ 7 files changed, 189 insertions(+), 104 deletions(-)
+
+commit 93726920f5f2b215601e44e24232f99d61133fae
+Author: mwech <mwech@student.tgm.ac.at>
+Date:   Sun Jan 18 17:27:57 2015 +0100
+
+    First MVC version, not completely working yet
+
+ .idea/workspace.xml | 277 ++++++++++++++++++++++------------------------------
+ controller.py       |  19 +++-
+ model.py            |  17 +++-
+ view.py             |  39 +++++---
+ 4 files changed, 178 insertions(+), 174 deletions(-)
+
+commit 0c56ba59d4f49b94ebdbea5b3f906989bfe93eb4
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Sun Jan 18 16:40:56 2015 +0100
+
+    grundfunktionen geadded
+    
+    tabellen click hinzugefügt
+    neustart hinzugefügt
+
+ .idea/.name                                    |   1 +
+ .idea/Nonogramm.iml                            |   8 +
+ .idea/encodings.xml                            |   4 +
+ .idea/inspectionProfiles/Project_Default.xml   |  51 ++
+ .idea/inspectionProfiles/profiles_settings.xml |   7 +
+ .idea/misc.xml                                 |   4 +
+ .idea/modules.xml                              |   8 +
+ .idea/scopes/scope_settings.xml                |   5 +
+ .idea/vcs.xml                                  |   6 +
+ .idea/workspace.xml                            | 625 +++++++++++++++++++++++++
+ controller.py                                  |   1 +
+ model.py                                       |   3 +
+ nonogram_ui.py                                 |   3 +-
+ ui_nonogramm.ui                                |   6 +
+ view.py                                        | 121 +++++
+ xy.py                                          | 154 ++++++
+ 16 files changed, 1006 insertions(+), 1 deletion(-)
+
+commit e6ac03027996fc1eca297d9b554213702937030c
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Sat Jan 17 16:31:34 2015 +0100
+
+    "listener" erstellt
+    
+    funktion für eine interaktion mit der tabelle wurde erstellt
+    
+    listener für button click
+
+ nonogram_ui.py | 49 ++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 32 insertions(+), 17 deletions(-)
+
+commit 189b7bcd86e669ca52ee08d7c1c682fe70f97e54
+Author: mkanyildiz <mkanyildiz@hotmail.com>
+Date:   Sat Jan 17 12:33:52 2015 +0100
+
+    ui fertig
+    
+    ui erstellt und konvertiert
+
+ Thumbs.db       | Bin 0 -> 18944 bytes
+ games.png       | Bin 0 -> 9829 bytes
+ nonogram_ui.py  | 121 +++++++++++++++++++++
+ ui_nonogramm.ui | 327 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 448 insertions(+)
