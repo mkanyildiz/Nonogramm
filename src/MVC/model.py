@@ -1,7 +1,10 @@
+from random import randint
 from PyQt4 import QtGui
 from PyQt4.QtCore import QRect
-from src.MVC import MyPopup
 from src.MVC.MyPopup import Popup
+from jinja2._compat import izip
+from pip._vendor.requests.packages.urllib3.connectionpool import xrange
+from pip.backwardcompat import reduce
 
 
 """
@@ -11,6 +14,10 @@ from src.MVC.MyPopup import Popup
               mit den GUI Elementen erstellt.
 """
 
+
+
+
+
 class MyModel():
     """
     Attributes:
@@ -18,6 +25,7 @@ class MyModel():
     """
     view = None
     level = ""
+    erg = []
     def setView(self, MyView):
         """
         Eine neue View erstellen
@@ -25,11 +33,14 @@ class MyModel():
         """
         self.view = MyView
         self.level = ""
+        self.erg = []
+
     def neustart(self):
         """
         Mit dieser Methode werden alle im Array gespeicherten Felder gelöscht und die Spielfläche wird wieder ins
         Anfangsstadium zurückversetzt, sprich in weißer Farbe.
         """
+        self.erg = []
         for j in range(15):
             for i in range(15):
                 list = [j, i]
@@ -38,40 +49,85 @@ class MyModel():
         self.level = self.view.comboBox.currentText()
 
         if self.level == "Medium":
-            self.erg = [[0,8],[0,9],
-                [1,2],[1,3],[1,7],[1,8],[1,9],
-                [2,1],[2,3],[2,4],[2,6],[2,7],[2,8],[2,9],
-                [3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],
-                [4,2],[4,3],[4,4],[4,5],[4,6],[4,7],
-                [5,3],[5,4],[5,5],[5,6],[5,7],[5,8],
-                [6,4],[6,5],[6,6],[6,7],[6,8],[6,9],
-                [7,3],[7,5],[7,7],[7,8],[7,9],
-                [8,8],[8,9],
-                [9,7],[9,8]]
+            for j in range(15):
+                randomnum1 = 0
+                randomnum2 = 0
+                for i in range(3):
+
+                    if i == 0:
+                        randomnum1 = randint(0,5)
+                    else:
+                        randomnum1 = randint(randomnum2,randomnum2+3)
+                    if i == 0:
+                        randomnum2 = randint(randomnum1+1, randomnum1+4)
+                    else:
+                        randomnum2 = randint(randomnum1+1,randomnum1+5)
+
+                    if randomnum1 >= 14:
+                        randomnum1 = 14
+                        break
+                    elif randomnum2 >= 14:
+                        randomnum2 = 14
+                        break
+
+
+                    for z in range(randomnum1,randomnum2):
+                        print(randomnum2)
+                        self.erg.append([j,z])
 
         elif self.level == "Easy":
-            self.erg = [[7,7]]
+            for j in range(15):
+                randomnum1 = 0
+                randomnum2 = 0
+                for i in range(3):
+
+                    if i == 0:
+                        randomnum1 = randint(0,2)
+                    else:
+                        randomnum1 = randint(randomnum2,randomnum2+1)
+                    if i == 0:
+                        randomnum2 = randint(randomnum1+4, randomnum1+8)
+                    else:
+                        randomnum2 = randint(randomnum1+4,randomnum1+8)
+
+                    if randomnum1 >= 14:
+                        randomnum1 = 14
+                        break
+                    elif randomnum2 >= 14:
+                        randomnum2 = 14
+                        break
+
+
+                    for z in range(randomnum1,randomnum2):
+                        print(randomnum2)
+                        self.erg.append([j,z])
 
         elif self.level == "Hard":
-            self.erg = [
-                [0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],[0,10],[0,11],
-                [1,2],[1,3],[1,5],[1,6],[1,7],[1,8],[1,9],[1,11],[1,12],
-                [2,1],[2,2],[2,3],[2,4],[2,6],[2,7],[2,8],[2,10],[2,11],[2,12],[2,13],
-                [3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[3,7],[3,9],[3,10],[3,11],[3,12],[3,13],[3,14],
+             for j in range(15):
+                randomnum1 = 0
+                randomnum2 = 0
+                for i in range(3):
 
-                [4,0],[4,1],[4,2],[4,6],[4,7],[4,8],[4,12],[4,13],[4,14],
-                [5,0],[5,1],[5,2],[5,6],[5,7],[5,8],[5,12],[5,13],[5,14],
-                [6,0],[6,1],[6,2],[6,6],[6,7],[6,8],[6,12],[6,13],[6,14],
-                [7,0],[7,1],[7,2],[7,3],[7,4],[7,5],[7,6],[7,7],[7,8],[7,9],[7,10],[7,11],[7,12],[7,13],[7,14],
-                [8,0],[8,1],[8,2],[8,3],[8,4],[8,5],[8,6],[8,7],[8,8],[8,9],[8,10],[8,11],[8,12],[8,13],[8,14],
-                [9,0],[9,1],[9,13],[9,14],
+                    if i == 0:
+                        randomnum1 = randint(0,5)
+                    else:
+                        randomnum1 = randint(randomnum2,randomnum2+2)
+                    if i == 0:
+                        randomnum2 = randint(randomnum1+1, randomnum1+2)
+                    else:
+                        randomnum2 = randint(randomnum1+1,randomnum1+2)
 
-                [10,0],[10,1],[10,2],[10,12],[10,13],[10,14],
-                [11,0],[11,1],[11,2],[11,3],[11,11],[11,12],[11,13],[11,14],
-                [12,1],[12,2],[12,3],[12,4],[12,10],[12,11],[12,12],[12,13],
-                [13,2],[13,3],[13,4],[13,5],[13,6],[13,7],[13,8],[13,9],[13,10],[13,11],[13,12],
-                [14,3],[14,4],[14,5],[14,6],[14,7],[14,8],[14,9],[14,10],[14,11]
-            ]
+                    if randomnum1 >= 14:
+                        randomnum1 = 14
+                        break
+                    elif randomnum2 >= 14:
+                        randomnum2 = 14
+                        break
+
+
+                    for z in range(randomnum1,randomnum2):
+                        print(randomnum2)
+                        self.erg.append([j,z])
         self.fill_tab()
         self.liste = []
 
@@ -120,41 +176,7 @@ class MyModel():
         """
         self.level = self.view.comboBox.currentText()
         self.neustart()
-        if self.level == "Medium":
-            self.erg = [[0,8],[0,9],
-                [1,2],[1,3],[1,7],[1,8],[1,9],
-                [2,1],[2,3],[2,4],[2,6],[2,7],[2,8],[2,9],
-                [3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],
-                [4,2],[4,3],[4,4],[4,5],[4,6],[4,7],
-                [5,3],[5,4],[5,5],[5,6],[5,7],[5,8],
-                [6,4],[6,5],[6,6],[6,7],[6,8],[6,9],
-                [7,3],[7,5],[7,7],[7,8],[7,9],
-                [8,8],[8,9],
-                [9,7],[9,8]]
 
-        elif self.level == "Easy":
-            self.erg = [[7,7]]
-
-        elif self.level == "Hard":
-            self.erg = [
-                [0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],[0,10],[0,11],
-                [1,2],[1,3],[1,5],[1,6],[1,7],[1,8],[1,9],[1,11],[1,12],
-                [2,1],[2,2],[2,3],[2,4],[2,6],[2,7],[2,8],[2,10],[2,11],[2,12],[2,13],
-                [3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[3,7],[3,9],[3,10],[3,11],[3,12],[3,13],[3,14],
-
-                [4,0],[4,1],[4,2],[4,6],[4,7],[4,8],[4,12],[4,13],[4,14],
-                [5,0],[5,1],[5,2],[5,6],[5,7],[5,8],[5,12],[5,13],[5,14],
-                [6,0],[6,1],[6,2],[6,6],[6,7],[6,8],[6,12],[6,13],[6,14],
-                [7,0],[7,1],[7,2],[7,3],[7,4],[7,5],[7,6],[7,7],[7,8],[7,9],[7,10],[7,11],[7,12],[7,13],[7,14],
-                [8,0],[8,1],[8,2],[8,3],[8,4],[8,5],[8,6],[8,7],[8,8],[8,9],[8,10],[8,11],[8,12],[8,13],[8,14],
-                [9,0],[9,1],[9,13],[9,14],
-
-                [10,0],[10,1],[10,2],[10,12],[10,13],[10,14],
-                [11,0],[11,1],[11,2],[11,3],[11,11],[11,12],[11,13],[11,14],
-                [12,1],[12,2],[12,3],[12,4],[12,10],[12,11],[12,12],[12,13],
-                [13,2],[13,3],[13,4],[13,5],[13,6],[13,7],[13,8],[13,9],[13,10],[13,11],[13,12],
-                [14,3],[14,4],[14,5],[14,6],[14,7],[14,8],[14,9],[14,10],[14,11]
-            ]
         for z in range(len(self.erg)):
             self.cell_clicked(self.erg[z][0], self.erg[z][1])
 
@@ -305,3 +327,4 @@ class MyModel():
                     self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
 
                  #   self.tableWidget_3.item(j,i).setText("xy")
+
