@@ -26,6 +26,9 @@ class MyModel():
     view = None
     level = ""
     erg = []
+    erg2 = []
+    liste_right = []
+    liste_top = []
     def setView(self, MyView):
         """
         Eine neue View erstellen
@@ -34,13 +37,24 @@ class MyModel():
         self.view = MyView
         self.level = ""
         self.erg = []
+        self.liste_right = []
+        self.liste_top = []
+        self.erg2 = []
+
+
 
     def neustart(self):
+        #liste als zwischenspiecher für die beschriftung
+
         """
         Mit dieser Methode werden alle im Array gespeicherten Felder gelöscht und die Spielfläche wird wieder ins
         Anfangsstadium zurückversetzt, sprich in weißer Farbe.
         """
         self.erg = []
+        zaehler = 0
+        self.erg2 = []
+        self.liste_right = []
+        self.liste_top = []
         for j in range(15):
             for i in range(15):
                 list = [j, i]
@@ -52,12 +66,14 @@ class MyModel():
             for j in range(15):
                 randomnum1 = 0
                 randomnum2 = 0
+                nb_list = []
+                spalte = []
                 for i in range(3):
 
                     if i == 0:
                         randomnum1 = randint(0,5)
                     else:
-                        randomnum1 = randint(randomnum2,randomnum2+3)
+                        randomnum1 = randint(randomnum2+1,randomnum2+3)
                     if i == 0:
                         randomnum2 = randint(randomnum1+1, randomnum1+4)
                     else:
@@ -71,24 +87,58 @@ class MyModel():
                         break
 
 
+
                     for z in range(randomnum1,randomnum2):
-                        print(randomnum2)
                         self.erg.append([j,z])
+                        self.erg2.append([z,j])
+                    nb_list.append(randomnum2-randomnum1)
+                self.liste_right.append(nb_list)
+
+            #Here we are refractoring the erg array so that we hava a two dimensional array which contains
+            #each column in a seperate array. We will use this array later on to count the fields in the actual column
+            result = []
+            for a in range(14):
+                spalte = []
+                for item in self.erg2:
+                    if (item[0] == a):
+                        spalte.append(item)
+                result.append(spalte)
+                #if item[0][1]+1 in self.erg2[]:
+            #result.append(spalte)
+            #print(result)
+
+            #Now we hav to check if the columns are seperated by white cells if so then we have to set the
+            #counter to 0 and start to count again
+            zaehler = 0
+            zwischen=[]
+            for y in range(len(result)):
+                for x in range(len(result[y])):
+                    if x != len(result[y])-1 and y != len(result)-1:
+                        if result[y][x+1][1] != result[y][x][1]+1:
+                            zaehler = 1
+
+                        else:
+                            zaehler+=1
+
+                    zwischen.append(zaehler)
+                self.liste_top.append(zwischen)
 
         elif self.level == "Easy":
             for j in range(15):
                 randomnum1 = 0
                 randomnum2 = 0
+                nb_list = []
+                spalte = []
                 for i in range(3):
 
                     if i == 0:
-                        randomnum1 = randint(0,2)
+                        randomnum1 = randint(0,1)
                     else:
-                        randomnum1 = randint(randomnum2,randomnum2+1)
+                        randomnum1 = randint(randomnum2+1,randomnum2+2)
                     if i == 0:
-                        randomnum2 = randint(randomnum1+4, randomnum1+8)
+                        randomnum2 = randint(randomnum1+6, randomnum1+10)
                     else:
-                        randomnum2 = randint(randomnum1+4,randomnum1+8)
+                        randomnum2 = randint(randomnum1+3,randomnum1+5)
 
                     if randomnum1 >= 14:
                         randomnum1 = 14
@@ -99,19 +149,53 @@ class MyModel():
 
 
                     for z in range(randomnum1,randomnum2):
-                        print(randomnum2)
                         self.erg.append([j,z])
+                        self.erg2.append([z,j])
+                    nb_list.append(randomnum2-randomnum1)
+                self.liste_right.append(nb_list)
+
+            #Here we are refractoring the erg array so that we hava a two dimensional array which contains
+            #each column in a seperate array. We will use this array later on to count the fields in the actual column
+            result = []
+            for a in range(14):
+                spalte = []
+                for item in self.erg2:
+                    if (item[0] == a):
+                        spalte.append(item)
+                result.append(spalte)
+                #if item[0][1]+1 in self.erg2[]:
+            #result.append(spalte)
+            #print(result)
+
+            #Now we hav to check if the columns are seperated by white cells if so then we have to set the
+            #counter to 0 and start to count again
+            zaehler = 0
+            zwischen=[]
+            for y in range(len(result)):
+                for x in range(len(result[y])):
+                    if x != len(result[y])-1 and y != len(result)-1:
+                        if result[y][x+1][1] != result[y][x][1]+1:
+                            zaehler = 1
+
+                        else:
+                            zaehler+=1
+
+                    zwischen.append(zaehler)
+                self.liste_top.append(zwischen)
 
         elif self.level == "Hard":
-             for j in range(15):
+            for j in range(15):
                 randomnum1 = 0
                 randomnum2 = 0
+                nb_list = []
+                spalte = []
+
                 for i in range(3):
 
                     if i == 0:
                         randomnum1 = randint(0,5)
                     else:
-                        randomnum1 = randint(randomnum2,randomnum2+2)
+                        randomnum1 = randint(randomnum2+1,randomnum2+2)
                     if i == 0:
                         randomnum2 = randint(randomnum1+1, randomnum1+2)
                     else:
@@ -125,9 +209,58 @@ class MyModel():
                         break
 
 
+
                     for z in range(randomnum1,randomnum2):
-                        print(randomnum2)
                         self.erg.append([j,z])
+                        self.erg2.append([z,j])
+                    nb_list.append(randomnum2-randomnum1)
+                self.liste_right.append(nb_list)
+
+
+            #Here we are refractoring the erg array so that we hava a two dimensional array which contains
+            #each column in a seperate array. We will use this array later on to count the fields in the actual column
+            result = []
+            for a in range(14):
+                spalte = []
+                for item in self.erg2:
+                    if (item[0] == a):
+                        spalte.append(item)
+                result.append(spalte)
+                #if item[0][1]+1 in self.erg2[]:
+            #result.append(spalte)
+            #print(result)
+
+            #Now we hav to check if the columns are seperated by white cells if so then we have to set the
+            #counter to 0 and start to count again
+            zaehler = 0
+            zwischen=[]
+            for y in range(len(result)):
+                for x in range(len(result[y])):
+                    if x != len(result[y])-1 and y != len(result)-1:
+                        if result[y][x+1][1] != result[y][x][1]+1:
+                            zaehler = 1
+
+                        else:
+                            zaehler+=1
+
+                    zwischen.append(zaehler)
+                self.liste_top.append(zwischen)
+
+        list = []
+
+
+        for j in range(len(self.liste_right)):
+            length_list = len(self.liste_right[j])
+            null_count = 8-length_list
+            print(self.liste_right[j])
+            print(null_count)
+            for x in range(null_count):
+                self.liste_right[j].append(0)
+
+
+        print(self.liste_right)
+        print("Hallo!")
+
         self.fill_tab()
         self.liste = []
 
@@ -201,27 +334,13 @@ class MyModel():
         Je nachdem, welches Muster gewählt wurde, werden die seitliche Tabelle und die Tabelle über der Spielfläche mit
         Zahlen versehen, welche zur Beschriftung dienen.
         """
-        if (self.level == "Medium"):
+        if (self.level == "Medium" or self.level == "Easy" or self.level == "Hard"):
             # filling table left
-            list_bes = [[2,0,0,0,0,0,0,0],
-                         [2,3,0,0,0,0,0,0],
-                         [1,2,4,0,0,0,0,0],
-                         [9,0,0,0,0,0,0,0],
-                         [6,0,0,0,0,0,0,0],
-                         [6,0,0,0,0,0,0,0],
-                         [6,0,0,0,0,0,0,0],
-                         [1,1,3,0,0,0,0,0],
-                         [2,0,0,0,0,0,0,0],
-                         [2,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0]]
+
             for j in range(15):
                 for i in range(8):
                     list = [j, i]
-                    self.led = QtGui.QLineEdit(str(list_bes[j][i]))
+                    self.led = QtGui.QLineEdit(str(self.liste_right[j][i]))
                     self.view.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
                     self.view.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
 
@@ -243,88 +362,5 @@ class MyModel():
                     self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
                  #   self.tableWidget_3.item(j,i).setText("xy")
 
-        elif (self.level == "Easy"):
-            # filling table left
-            list_bes = [[0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [1,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0],
-                         [0,0,0,0,0,0,0,0]]
-            for j in range(15):
-                for i in range(8):
-                    list = [j, i]
-                    self.led = QtGui.QLineEdit(str(list_bes[j][i]))
-                    self.view.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.view.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
-                 #   self.tableWidget_3.item(j,i).setText("xy")
 
-            # filling table up
-            list_bes2 = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]]
-            for j in range(8):
-                for i in range(15):
-                    list = [j, i]
-                    self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
-                    self.view.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
-
-                 #   self.tableWidget_3.item(j,i).setText("xy")
-        elif (self.level == "Hard"):
-            # filling table left
-            list_bes = [[9,0,0,0,0,0,0,0],
-                         [2,5,2,0,0,0,0,0],
-                         [4,3,4,0,0,0,0,0],
-                         [6,1,6,0,0,0,0,0],
-                         [3,3,3,0,0,0,0,0],
-                         [3,3,3,0,0,0,0,0],
-                         [3,3,3,0,0,0,0,0],
-                         [15,0,0,0,0,0,0,0],
-                         [15,0,0,0,0,0,0,0],
-                         [2,2,0,0,0,0,0,0],
-                         [3,3,0,0,0,0,0,0],
-                         [4,4,0,0,0,0,0,0],
-                         [4,4,0,0,0,0,0,0],
-                         [11,0,0,0,0,0,0,0],
-                         [9,0,0,0,0,0,0,0]]
-            for j in range(15):
-                for i in range(8):
-                    list = [j, i]
-                    self.led = QtGui.QLineEdit(str(list_bes[j][i]))
-                    self.view.tableWidget_3.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.view.tableWidget_3.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
-                 #   self.tableWidget_3.item(j,i).setText("xy")
-
-            # filling table up
-            list_bes2 = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,1,2,0,0,   0,2,1,0,0,0,0],
-                        [0,0,0,4,2,1,3,0,   3,1,2,4,0,0,0],
-                        [0,0,8,2,2,2,5,9,   5,2,2,2,8,0,0],
-                        [9,11,4,4,3,2,2,2,  2,2,3,4,4,11,9]]
-            for j in range(8):
-                for i in range(15):
-                    list = [j, i]
-                    self.led = QtGui.QLineEdit(str(list_bes2[j][i]))
-                    self.view.tableWidget_4.setItem(j,i,QtGui.QTableWidgetItem())
-                    self.view.tableWidget_4.setItem(j, i, QtGui.QTableWidgetItem(self.led.text()))
-
-                 #   self.tableWidget_3.item(j,i).setText("xy")
 
